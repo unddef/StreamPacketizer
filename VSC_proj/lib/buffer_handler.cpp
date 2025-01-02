@@ -93,13 +93,14 @@ void Buffer_Handler::dump_buffer_to_debug(){
 
 //discard data from the buffer. starts at buffer[0] and deletes length bytes. afterwards moves remaining data to the front
 bool Buffer_Handler::discard_data(DWORD length){
-    if(length < 0) return(0);
-    if(length == 0) return(1);
+    if(length < 0) return(1);
+    if(length == 0) return(0);
     if(length > bufferSize){
         ptrDebug->debug(1,"Buffer_Handler: discard_data(): illegal data address. length to big! aborting");
-        return(0);
+        return(1);
     };
     memmove(chrBuffer, chrBuffer + length, get_buffer_size() - length);
     bufferFilled = bufferFilled - length;
+    return(0);
 };
 

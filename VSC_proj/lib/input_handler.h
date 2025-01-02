@@ -4,7 +4,8 @@
 #include <string>
 #include <windows.h>
 #include <regex>
-
+#include <winsock.h>
+#pragma comment(lib, "ws2_32.lib") // Link Winsock library
 #include "./debug.h"
 #include "buffer_handler.h"
 
@@ -16,9 +17,11 @@ class Input_Handler {
         Custom_Debugger* ptrDebug;
         Buffer_Handler* ptrStreamBuffer;
         std::string input_path;
-        std::string input_ip = "", input_port = "";
+        std::string tcp_input_ip = ""; 
+        uint16_t tcp_input_port = 0;
         DCB dcbSerialParameters = {0};
         HANDLE h_Serial;
+        SOCKET h_tcpSocket;
         uint8_t com_configure_port();
         uint8_t com_open_port();
         uint8_t com_read_bytes();
