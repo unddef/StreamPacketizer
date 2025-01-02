@@ -16,12 +16,14 @@
 const DWORD MAIN_BUFFER_SIZE = 330;
 const DWORD MAX_TELEGRAM_LENGTH = 255;
 
+std::string inputStreamPath = "COM4";
+//std::string inputStreamPath = "10.10.10.1:8888";
 
 Custom_Debugger debug(4);
 PcapHandler     pcapFile(&debug);
 Buffer_Handler  streamBuffer(MAIN_BUFFER_SIZE,&debug);
 Input_Handler   inputStream(&debug,&streamBuffer);
-Packetizer_101  iecPacketizer(&debug,&streamBuffer,&pcapFile,2,2,3);
+Packetizer_101  iecPacketizer(&debug,&streamBuffer,&pcapFile,1,2,3);
 
 
 //handle ctrl+c and other external signals
@@ -44,7 +46,7 @@ uint8_t main(){
     pcapFile.write_file_header();
 
     //open com port
-    inputStream.open_input_stream("\\\\.\\COM8",true);
+    inputStream.open_input_stream(inputStreamPath);
 
     while(loopingEnabled){
         
