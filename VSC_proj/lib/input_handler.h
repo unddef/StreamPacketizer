@@ -10,6 +10,7 @@
 #include "buffer_handler.h"
 
 const int MAX_COMPORT_READ_BLOCK_LENGTH = 15;
+const int MAX_IPPORT_READ_BLOCK_LENGTH = 100;
 //using namespace std;
 
 class Input_Handler {

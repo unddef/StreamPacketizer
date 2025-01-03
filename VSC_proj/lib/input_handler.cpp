@@ -125,32 +125,34 @@ uint8_t Input_Handler::ip_open_socket(){
     //Did something happen?
     if (error) {
         ptrDebug->debug(1,"ip_open_socket: error at WSAStartup");
-        return(1);
+        exit(1);
     }
     //Did we get the right Winsock version?
     if(wsadata.wVersion != 0x0202){
         WSACleanup(); //Clean up Winsock
         ptrDebug->debug(1,"ip_open_socket: error - wrong version");
-        return(1);
+        exit(1);
     }
     //Fill out the information needed to initialize a socket�
-    SOCKADDR_IN target; //Socket address information
-    target.sin_family = AF_INET; // address family Internet
-    target.sin_port = htons (4444); //Port to connect on
-    target.sin_addr.s_addr = inet_addr ("198.18.2.5"); //Target IP
+    SOCKADDR_IN dstAddr; //Socket address information
+    dstAddr.sin_family = AF_INET; // address family Internet
+    dstAddr.sin_port = htons (tcp_input_port); //Port to connect on
+    dstAddr.sin_addr.s_addr = inet_addr (tcp_input_ip.c_str()); //Target IP
     h_tcpSocket = socket (AF_INET, SOCK_STREAM, IPPROTO_TCP); //Create socket
     if (h_tcpSocket == INVALID_SOCKET){
-        ptrDebug->debug(1,"ip_open_socket: error creating socket");
-        return(1); //Couldn't create the socket
+        ptrDebug->debug(1,"ip_open_socket: error creating socket. ErrorID: ",false);
+        ptrDebug->debug(1,WSAGetLastError(),true,false);
+        exit(1); //Couldn't create the socket
     }  
 
     //Try connecting...
-    if (connect(h_tcpSocket, (SOCKADDR *)&target, sizeof(target)) == SOCKET_ERROR){
-        ptrDebug->debug(2,"ip_open_socket: could not connect to IP");
-        exit(1);
-        return(1); //Couldn't connect
+    if (connect(h_tcpSocket, (SOCKADDR *)&dstAddr, sizeof(dstAddr)) == SOCKET_ERROR){
+        ptrDebug->debug(2,"ip_open_socket: could not connect to IP. Error code: ",false);
+        ptrDebug->debug(1,WSAGetLastError(),true,false);
+        exit(1); //Couldn't connect
     }else{
         ptrDebug->debug(2,"ip_open_socket: TCP connection established");
+        input_type = enumInputStreamType::IP_PORT;
         return(0); //Success
     }
 
@@ -160,9 +162,60 @@ uint8_t Input_Handler::ip_open_socket(){
 };
 
 uint8_t Input_Handler::ip_read_bytes(){
-     ptrDebug->debug(4,"ip_read_bytes: reading");
+    ptrDebug->debug(4,"ip_read_bytes: reading");
+    //find out how many bytes in tcp buffer
+    u_long bytesAvailable;
+    int call_result = ioctlsocket(h_tcpSocket, FIONREAD, &bytesAvailable);     
+    if (call_result == SOCKET_ERROR) {
+        ptrDebug->debug(2,"ip_read_bytes: error reading size of TCP buffer. Error code: ",false);
+        ptrDebug->debug(1,WSAGetLastError(),true,false);
+        return(1);
+    };
+    
+    if(bytesAvailable <= 0){
+        ptrDebug->debug(1,"ip_read_bytes: no bytes in TCP buffer.");
+        return(0);
+    };
+    //determine how many bytes to read. if charBuffer has enough room -> read MAX_IPPORT_READ_BLOCK_LENGTH. 
+    //else read as many bytes as fit in chrBuffer
+    DWORD bytesToRead = 0;
+    if(ptrStreamBuffer->buffer_free_bytes_left() >= bytesAvailable ){
+        //buffer has enough space to fit all tcp_buffer data
+        if(bytesAvailable <= MAX_COMPORT_READ_BLOCK_LENGTH) {
+            //que data smaller than blocksize
+            bytesToRead = bytesAvailable;
+        }else{
+            //blocked tcp_buffer read
+            bytesToRead = MAX_COMPORT_READ_BLOCK_LENGTH;
+        }
+    }else{
+        //buffer almost full. reading only as many bytes from source as bytes free in buffer
+        bytesToRead = ptrStreamBuffer->buffer_free_bytes_left();
+    }
+
+    ptrDebug->debug(4,"ip_read_bytes: bytes in TCP buffer: ",false);
+    ptrDebug->debug(4,bytesAvailable,false,false);
+    ptrDebug->debug(4," bytes free in localBuffer: ",false,false);
+    ptrDebug->debug(4,ptrStreamBuffer->buffer_free_bytes_left(),false,false);
+    ptrDebug->debug(4," bytes to process: ",false,false);
+    ptrDebug->debug(4,bytesToRead,true,false);
+
+    //const int bufferSize = 1024;
+    char* tmpBuf = new char[bytesToRead];
+    int bytesReceived = recv(h_tcpSocket, tmpBuf, bytesToRead, 0);
+    
+    if (bytesReceived < 0) {
+        ptrDebug->debug(1,"ip_read_bytes: error reading bytes from TCP socket. Error code: ",false);
+        ptrDebug->debug(1,WSAGetLastError(),true,false);
+        return(1);
+    } else {
+        ptrDebug->debug(4,"ip_read_bytes: bytes received: ",false);
+        ptrDebug->debug(4,bytesReceived,true,false);
+        //std::cout << "Received data: " << tmpBuf << std::endl;
+        ptrStreamBuffer->add_data(tmpBuf,bytesToRead);
+    }
     return(0);
-}
+};
 
 uint8_t Input_Handler::open_input_stream(std::string path){
     
@@ -225,22 +278,21 @@ uint8_t Input_Handler::read_bytes(){
         break;
 
         default:
-        return(1);
+        ptrDebug->debug(1,"no input stream open. exiting program.");
+        exit(1);
     }
     return(1);
 }
 
 uint8_t Input_Handler::close_input_stream(){
-    if(input_type == enumInputStreamType::COM_PORT){
-        CloseHandle(h_Serial);
-        input_type = enumInputStreamType::UNKNOWN;
-        return(0);
-    }
-    //cleanup TCP session
+    //close file handler
+    if(h_Serial) CloseHandle(h_Serial);
+    //close  TCP session
     if (h_tcpSocket) closesocket(h_tcpSocket);
     WSACleanup(); //Clean up Winsock
+    input_type = enumInputStreamType::UNKNOWN;
     return(1);
 };
  
-//heper functions
+//helper functions
 

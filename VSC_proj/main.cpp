@@ -17,7 +17,7 @@ const DWORD MAIN_BUFFER_SIZE = 330;
 const DWORD MAX_TELEGRAM_LENGTH = 255;
 
 //std::string inputStreamPath = "COM4";
-std::string inputStreamPath = "198.18.2.5:4444";
+std::string inputStreamPath = "127.0.0.1:8889";
 
 Custom_Debugger debug(4);
 PcapHandler     pcapFile(&debug);
