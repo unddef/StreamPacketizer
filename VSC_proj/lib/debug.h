@@ -37,12 +37,12 @@ template <typename any2> void Custom_Debugger::debug( uint8_t debug_level, any2 
         if(timestamp != 0){
             std::time_t now = std::time(nullptr);
             const std::tm time = *std::localtime(std::addressof(now));
-            std::cout << "[" << std::setfill('0') << std::setw(2) << time.tm_hour << ":" << std::setfill('0') << std::setw(2) << time.tm_min << ":" << std::setfill('0') << std::setw(2) << time.tm_sec << "] : ";
+            std::cerr << "[" << std::setfill('0') << std::setw(2) << time.tm_hour << ":" << std::setfill('0') << std::setw(2) << time.tm_min << ":" << std::setfill('0') << std::setw(2) << time.tm_sec << "] : ";
         }
         if(new_line){
-        std::cout << msg << std::endl;
+        std::cerr << msg << std::endl;
         } else {
-            std::cout << msg;
+            std::cerr << msg;
         };
     };
 };

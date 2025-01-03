@@ -147,17 +147,15 @@ uint8_t Input_Handler::ip_open_socket(){
 
     //Try connecting...
     if (connect(h_tcpSocket, (SOCKADDR *)&dstAddr, sizeof(dstAddr)) == SOCKET_ERROR){
-        ptrDebug->debug(2,"ip_open_socket: could not connect to IP. Error code: ",false);
+        ptrDebug->debug(1,"ip_open_socket: could not connect to IP. Error code: ",false);
         ptrDebug->debug(1,WSAGetLastError(),true,false);
         exit(1); //Couldn't connect
-    }else{
-        ptrDebug->debug(2,"ip_open_socket: TCP connection established");
-        input_type = enumInputStreamType::IP_PORT;
-        return(0); //Success
     }
-
-    //cleanup
     
+    //connect should have worked. check again
+    ptrDebug->debug(1,"ip_open_socket: TCP connection established");
+    input_type = enumInputStreamType::IP_PORT;
+    return(0); //Success
 
 };
 
@@ -171,22 +169,24 @@ uint8_t Input_Handler::ip_read_bytes(){
         ptrDebug->debug(1,WSAGetLastError(),true,false);
         return(1);
     };
-    
+
     if(bytesAvailable <= 0){
         ptrDebug->debug(1,"ip_read_bytes: no bytes in TCP buffer.");
         return(0);
     };
+
+
     //determine how many bytes to read. if charBuffer has enough room -> read MAX_IPPORT_READ_BLOCK_LENGTH. 
     //else read as many bytes as fit in chrBuffer
     DWORD bytesToRead = 0;
     if(ptrStreamBuffer->buffer_free_bytes_left() >= bytesAvailable ){
         //buffer has enough space to fit all tcp_buffer data
-        if(bytesAvailable <= MAX_COMPORT_READ_BLOCK_LENGTH) {
+        if(bytesAvailable <= MAX_IPPORT_READ_BLOCK_LENGTH) {
             //que data smaller than blocksize
             bytesToRead = bytesAvailable;
         }else{
             //blocked tcp_buffer read
-            bytesToRead = MAX_COMPORT_READ_BLOCK_LENGTH;
+            bytesToRead = MAX_IPPORT_READ_BLOCK_LENGTH;
         }
     }else{
         //buffer almost full. reading only as many bytes from source as bytes free in buffer
@@ -207,6 +207,7 @@ uint8_t Input_Handler::ip_read_bytes(){
     if (bytesReceived < 0) {
         ptrDebug->debug(1,"ip_read_bytes: error reading bytes from TCP socket. Error code: ",false);
         ptrDebug->debug(1,WSAGetLastError(),true,false);
+        delete[] tmpBuf;
         return(1);
     } else {
         ptrDebug->debug(4,"ip_read_bytes: bytes received: ",false);
@@ -214,6 +215,7 @@ uint8_t Input_Handler::ip_read_bytes(){
         //std::cout << "Received data: " << tmpBuf << std::endl;
         ptrStreamBuffer->add_data(tmpBuf,bytesToRead);
     }
+    delete[] tmpBuf;
     return(0);
 };
 
@@ -248,7 +250,7 @@ uint8_t Input_Handler::open_input_stream(std::string path){
     
     if (std::regex_match(path, match, ip_port_regex)) {            // path matches the IP:port regex
         if (match.size() == 3) { // match[0] is the whole match, match[1] is the IP, match[2] is the port
-            ptrDebug->debug(3,"open_input_stream: IP:PORT regex match");
+            //ptrDebug->debug(3,"open_input_stream: IP:PORT regex match");
             tcp_input_ip = match[1].str();
             tcp_input_port = stoi(match[2].str());
             input_type = enumInputStreamType::IP_PORT;

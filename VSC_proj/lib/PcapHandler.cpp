@@ -1,50 +1,27 @@
 #include "PcapHandler.h"
 
-PcapHandler::PcapHandler(Custom_Debugger* ext_debugger){
+Pcap_Handler::Pcap_Handler(Custom_Debugger* ext_debugger, Output_Handler* extOutputStream){
     ptrDebug = ext_debugger;
+    ptrOutputStream = extOutputStream;
 };
 
-PcapHandler::~PcapHandler(){
-    close_file();
+Pcap_Handler::~Pcap_Handler(){
 };
 
 // Utility function to convert 16-bit integer to network byte order
-uint16_t PcapHandler::loc_htons(uint16_t hostshort) {
+uint16_t Pcap_Handler::loc_htons(uint16_t hostshort) {
     return (hostshort >> 8) | (hostshort << 8);
 }
 
 // Utility function to convert 32-bit integer to network byte order
-uint32_t PcapHandler::loc_htonl(uint32_t hostlong) {
+uint32_t Pcap_Handler::loc_htonl(uint32_t hostlong) {
     return ((hostlong >> 24) & 0xff) |
             ((hostlong >> 8) & 0xff00) |
             ((hostlong << 8) & 0xff0000) |
             ((hostlong << 24) & 0xff000000);
 }
 
-bool PcapHandler::open_file(const std::string& filepath) {
-    pcapFileHandler.open(filepath, std::ios::out | std::ios::binary);
-    if (!pcapFileHandler.is_open()) {
-        ptrDebug->debug(1,"Failed to open file: ", false);
-        ptrDebug->debug(1,filepath,true,false);;
-        return(0);
-    }
-    return true;
-};
-
-bool PcapHandler::close_file(void) {
-    if (!pcapFileHandler.is_open()) {
-        pcapFileHandler.close();
-        return(1);
-    }
-    return(0);
-};
-
-bool PcapHandler::write_file_header() {
-    if (!pcapFileHandler.is_open()) {
-        ptrDebug->debug(1,"pcapHandler/write_header: File is not open. Cannot write pcapHeader.");
-        return(0);
-    }
-
+bool Pcap_Handler::write_file_header() {
     PcapFileHeader pcapHeader;
     pcapHeader.magic_number = 0xa1b2c3d4; // Magic number for PCAP
     pcapHeader.version_major = 2;        // PCAP format major version
@@ -54,22 +31,17 @@ bool PcapHandler::write_file_header() {
     pcapHeader.snaplen = 65535;          // Max packet length
     pcapHeader.network = 1;              // Ethernet link-layer
     //write header
-    pcapFileHandler.write(reinterpret_cast<char*>(&pcapHeader), sizeof(pcapHeader));
+    ptrOutputStream->write_data(reinterpret_cast<char*>(&pcapHeader), sizeof(pcapHeader));
     return(1);
 };
 
  // Writes a packet to the PCAP file
-    bool PcapHandler::write_packet(const char* packet_data, uint32_t packet_length, bool is_msg_from_master) {
+    bool Pcap_Handler::write_packet(const char* packet_data, uint32_t packet_length, bool is_msg_from_master) {
         PcapPacketHeader packet_header;
         EthernetHeader eth_header = {};
         IPv4Header ip_header = {};
         TcpHeader tcp_header = {};
 
-        if (!pcapFileHandler.is_open()) {
-            ptrDebug->debug(1,"pcapHandler/write_packet:File is not open. Cannot write packet.");
-            return(0);
-        }
-        
         // fixed ethernet header (to be added before payload data)
         //std::memset(eth_header.destination, 0xbb, 6); // Broadcast MAC
         //std::memset(eth_header.source, 0xaa, 6);      // Example source MAC
@@ -144,14 +116,14 @@ bool PcapHandler::write_file_header() {
         
         
         // Write packet header
-        pcapFileHandler.write(reinterpret_cast<char*>(&packet_header), sizeof(packet_header));
+        ptrOutputStream->write_data(reinterpret_cast<char*>(&packet_header), sizeof(packet_header));
         // Write Ethernet header
-        pcapFileHandler.write(reinterpret_cast<char*>(&eth_header), sizeof(eth_header));
+        ptrOutputStream->write_data(reinterpret_cast<char*>(&eth_header), sizeof(eth_header));
         // Write ip header
-        pcapFileHandler.write(reinterpret_cast<char*>(&ip_header), sizeof(ip_header));
+        ptrOutputStream->write_data(reinterpret_cast<char*>(&ip_header), sizeof(ip_header));
         // Write tcp header
-        pcapFileHandler.write(reinterpret_cast<char*>(&tcp_header), sizeof(tcp_header));
+        ptrOutputStream->write_data(reinterpret_cast<char*>(&tcp_header), sizeof(tcp_header));
         // Write packet data
-        pcapFileHandler.write(packet_data, packet_length);
+        ptrOutputStream->write_data(packet_data, packet_length);
         return(1);
     }

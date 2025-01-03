@@ -1,15 +1,17 @@
 #ifndef Pcap_Handler_H
 #define Pcap_Handler_H
 #include "debug.h"
+#include "output_handler.h"
 
 //#include <iostream>
-#include <fstream>
+//#include <fstream>
 
-class PcapHandler {
+class Pcap_Handler {
 
     private:
         Custom_Debugger* ptrDebug;
-        std::ofstream pcapFileHandler;      //file handler
+        Output_Handler*  ptrOutputStream;
+        //std::ofstream pcapFileHandler;      //file handler
         uint32_t tcp_sequence_master = 0;
         uint32_t tcp_sequence_slave = 1000;
         uint32_t tcp_ack_nr = 0;
@@ -65,13 +67,13 @@ class PcapHandler {
     };
 
     public:
-        PcapHandler(Custom_Debugger*);
-        ~PcapHandler();
+        Pcap_Handler(Custom_Debugger*, Output_Handler*);
+        ~Pcap_Handler();
         
         uint16_t loc_htons(uint16_t);
         uint32_t loc_htonl(uint32_t);
-        bool open_file(const std::string& filepath);
-        bool close_file(void);
+        //bool open_file(const std::string& filepath);
+        //bool close_file(void);
         bool write_file_header();
         bool write_packet(const char* , uint32_t, bool );
 
