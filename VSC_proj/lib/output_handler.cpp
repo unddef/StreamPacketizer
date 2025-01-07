@@ -32,6 +32,7 @@ uint8_t Output_Handler::open_output_stream(enumOutputStreamType output_type , st
             ptrDebug->debug(3,"using STDOUT as output stream");
             currentOutputType = enumOutputStreamType::STDOUT;
             currentOutputPath = "";
+            _setmode(_fileno(stdout), O_BINARY);        //set output mode to binary to avoid problems with "random" 0x0d (new line) insertion
         break;
         default:
             ptrDebug->debug(1,"no output stream selected. exiting");
@@ -53,16 +54,26 @@ uint8_t Output_Handler::write_data(const char* data_to_write, uint16_t datalen){
                 exit(1);
             }
         break;
-
-        case enumOutputStreamType::STDOUT :
+        
+        
+        case enumOutputStreamType::STDOUT : {
             //std::cout.write(data_to_write,datalen);
-            int wb;
+            int wb;   
             wb = fwrite(data_to_write, sizeof(char), datalen,stdout);
-            ptrDebug->debug(3,"output_handler: writing to stdout bytecount: ",false);
-            ptrDebug->debug(3,datalen,false,false);
-            ptrDebug->debug(3," - written by fwrite: ",false,false);
-            ptrDebug->debug(3,wb,true,false);
-        break;
+            ptrDebug->debug(4,"output_handler: writing to stdout bytecount: ",false);
+            ptrDebug->debug(4,datalen,false,false);
+            ptrDebug->debug(4," - written by fwrite: ",false,false);
+            ptrDebug->debug(4,wb,true,false);
+
+            char* dataString2 = new char[datalen * 3 + 1];
+            for (size_t i = 0; i < datalen; ++i) {
+                sprintf(dataString2 + i * 3, "%02X ", static_cast<unsigned char>(data_to_write[i]));
+            }
+            ptrDebug->debug(4,"output_Handler : write STDOUT - RAW DATA: ",false);
+            ptrDebug->debug(4,dataString2,true, false);
+            delete[] dataString2;
+            break;
+        }
 
         default:
             ptrDebug->debug(1,"output_handler: no output stream active.");
@@ -71,8 +82,12 @@ uint8_t Output_Handler::write_data(const char* data_to_write, uint16_t datalen){
     }
     return(0);
 };
+
 uint8_t Output_Handler::close_output_stream(){
-    //close file
+    //flush stdout+stderr buffer to send last data from buffers
+    fflush(stdout); 
+    fflush(stderr); 
+    //close file handler if still open
     if (!FileHandler.is_open()) {
         FileHandler.close();
         return(1);

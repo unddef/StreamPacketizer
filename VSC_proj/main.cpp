@@ -14,13 +14,23 @@
 #include "./lib/Packetizer_101.h"
 #include "./lib/output_handler.h"
 
+
+/*** TODOs****
+- buffer klasse kann voll laufen. Wenn packetizer durchgelaufen, er aber keine daten wegschreibt (also kein frame gefunden hat) und der puffer voll ist, soll alles wegeschrieben werdne.
+  alternativ: wenn buffer voller als max_telegram_size
+
+- fehlgeschlagener tcp verbindungsaufbau wird nicht erkannt. sollte das programm beenden
+//********/
+
 const DWORD MAIN_BUFFER_SIZE = 330;
 const DWORD MAX_TELEGRAM_LENGTH = 255;
 
 //std::string inputStreamPath = "COM4";
 std::string inputStreamPath = "127.0.0.1:8889";
 
-std::string outputStreamPath = "127.0.0.1:8889";
+Output_Handler::enumOutputStreamType output_type = Output_Handler::enumOutputStreamType::STDOUT;
+//Output_Handler::enumOutputStreamType output_type = Output_Handler::enumOutputStreamType::FILE;
+std::string outputStreamPath = "./test_output.pcap";
 
 Custom_Debugger debug(4);
 Output_Handler  outputStream(&debug);
@@ -46,9 +56,7 @@ uint8_t main(){
     std::signal(SIGINT, signalHandler);
     
     //open pcap file
-    //outputStream.open_output_stream(Output_Handler::enumOutputStreamType::FILE, "./test2.pcap");
-    outputStream.open_output_stream(Output_Handler::enumOutputStreamType::STDOUT);
-    //pcapFile.open_file("./test.pcap");
+    outputStream.open_output_stream(output_type, outputStreamPath);
     pcapFile.write_file_header();
 
     //openinput source
@@ -61,7 +69,8 @@ uint8_t main(){
         iecPacketizer.process_buffer();
          std::this_thread::sleep_for(std::chrono::seconds(1));
     }
-
+    debug.debug(1,"closing handlers");
     inputStream.close_input_stream();
     outputStream.close_output_stream();
+    debug.debug(1,"program end");
 }

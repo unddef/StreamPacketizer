@@ -222,7 +222,6 @@ uint8_t Input_Handler::ip_read_bytes(){
 uint8_t Input_Handler::open_input_stream(std::string path){
     
     //separate path string and check what input type to use
-    //R"(COM\d+)"
     std::regex com_regex(R"((COM)(\d+))");                              // Regular expression for COM port (e.g., "COM10")
     std::regex ip_port_regex(R"((\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}):(\d+))");       // Regular expression for IP:port (e.g., "192.168.1.1:8080")                      
     std::smatch match;
@@ -263,7 +262,8 @@ uint8_t Input_Handler::open_input_stream(std::string path){
         return(1);
     }
 
-    ptrDebug->debug(3,"open_input_stream: unkown input type specified. cant open!");
+    ptrDebug->debug(1,"open_input_stream: unkown input type specified. cant open! exiting");
+    exit(1);
     return(1);
 };
 

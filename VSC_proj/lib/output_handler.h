@@ -2,6 +2,10 @@
 #define Output_Handler_H
 #include <string>
 #include <fstream>
+#include <fcntl.h>
+#include <io.h>
+//#include <stdio.h>
+
 #include "debug.h"
 
 class Output_Handler{

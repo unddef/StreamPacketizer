@@ -126,7 +126,7 @@ uint8_t Packetizer_101::process_buffer(){
                         written_up_to_byte = i + telegram_total_buffer_length;
                         i = i + telegram_total_buffer_length-1;
                         ptrDebug->debug(4,"jumping to byte: ",false);
-                        ptrDebug->debug(4,i,true,false);
+                        ptrDebug->debug(4,i+1,true,false);
 
                     }else{
                         //start of frame looked good, but there is no stopbyte after given data_length

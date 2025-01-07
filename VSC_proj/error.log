@@ -1,0 +1,1332 @@
+[13:41:10] : program start
+[13:41:10] : using STDOUT as output stream
+[13:41:10] : output_handler: writing to stdout bytecount: 24 - written by fwrite: 24
+[13:41:10] : output_Handler : write STDOUT - RAW DATA: D4 C3 B2 A1 02 00 04 00 00 00 00 00 00 00 00 00 FF FF 00 00 01 00 00 00 
+[13:41:10] : open_input_stream: opening TCP socket to 127.0.0.1:8889
+[13:41:10] : ip_open_socket: TCP connection established
+[13:41:10] : ip_read_bytes: reading
+[13:41:10] : ip_read_bytes: no bytes in TCP buffer.
+[13:41:10] : Buffer_Handler : 0 bytes in buffer: 
+[13:41:11] : ip_read_bytes: reading
+[13:41:11] : ip_read_bytes: no bytes in TCP buffer.
+[13:41:11] : Buffer_Handler : 0 bytes in buffer: 
+[13:41:12] : ip_read_bytes: reading
+[13:41:12] : ip_read_bytes: no bytes in TCP buffer.
+[13:41:12] : Buffer_Handler : 0 bytes in buffer: 
+[13:41:13] : ip_read_bytes: reading
+[13:41:13] : ip_read_bytes: no bytes in TCP buffer.
+[13:41:13] : Buffer_Handler : 0 bytes in buffer: 
+[13:41:14] : ip_read_bytes: reading
+[13:41:14] : ip_read_bytes: bytes in TCP buffer: 68 bytes free in localBuffer: 330 bytes to process: 68
+[13:41:14] : ip_read_bytes: bytes received: 68
+[13:41:14] : Buffer_Handler : data added - RAW DATA: 10 49 01 4A 16 10 0B 01 0C 16 10 40 01 41 16 10 00 01 01 16 10 7B 01 7C 16 FF FA 2C 01 00 00 25 80 FF F0 FF FA 2C 02 08 FF F0 FF FA 2C 03 03 FF F0 FF FA 2C 04 01 FF F0 FF FA 2C 05 01 FF F0 10 09 01 0A 16 
+[13:41:14] : Buffer_Handler : 68 bytes in buffer: 10 49 01 4A 16 10 0B 01 0C 16 10 40 01 41 16 10 00 01 01 16 10 7B 01 7C 16 FF FA 2C 01 00 00 25 80 FF F0 FF FA 2C 02 08 FF F0 FF FA 2C 03 03 FF F0 FF FA 2C 04 01 FF F0 FF FA 2C 05 01 FF F0 10 09 01 0A 16 
+[13:41:14] : Packetizer: got data: 10 49 01 4A 16 10 0B 01 0C 16 10 40 01 41 16 10 00 01 01 16 10 7B 01 7C 16 FF FA 2C 01 00 00 25 80 FF F0 FF FA 2C 02 08 FF F0 FF FA 2C 03 03 FF F0 FF FA 2C 04 01 FF F0 FF FA 2C 05 01 FF F0 10 09 01 0A 16 
+[13:41:14] : found frame(fixed length) at buffer[0-4]
+[13:41:14] : writing packet from master
+[13:41:14] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: EA 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 00 00 00 03 E8 50 18 04 00 00 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 10 49 01 4A 16 
+[13:41:14] : jumping to byte: 5
+[13:41:14] : found frame(fixed length) at buffer[5-9]
+[13:41:14] : writing packet from slave
+[13:41:14] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: EA 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 03 E8 00 00 00 05 50 18 04 00 00 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 10 0B 01 0C 16 
+[13:41:14] : jumping to byte: 10
+[13:41:14] : found frame(fixed length) at buffer[10-14]
+[13:41:14] : writing packet from master
+[13:41:14] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: EA 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 05 00 00 03 ED 50 18 04 00 00 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 10 40 01 41 16 
+[13:41:14] : jumping to byte: 15
+[13:41:14] : found frame(fixed length) at buffer[15-19]
+[13:41:14] : writing packet from slave
+[13:41:14] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: EA 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 03 ED 00 00 00 0A 50 18 04 00 00 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 10 00 01 01 16 
+[13:41:14] : jumping to byte: 20
+[13:41:14] : found frame(fixed length) at buffer[20-24]
+[13:41:14] : writing packet from master
+[13:41:14] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: EA 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 0A 00 00 03 F2 50 18 04 00 00 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:14] : jumping to byte: 25
+[13:41:14] : found frame(fixed length) at buffer[63-67]
+[13:41:14] : writing garbage from buffer[25-63]
+[13:41:14] : writing packet from slave
+[13:41:14] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: EA 20 7D 67 00 00 00 00 5C 00 00 00 5C 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 45 00 00 4E 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 03 F2 00 00 00 0F 50 18 04 00 00 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 38 - written by fwrite: 38
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: FF FA 2C 01 00 00 25 80 FF F0 FF FA 2C 02 08 FF F0 FF FA 2C 03 03 FF F0 FF FA 2C 04 01 FF F0 FF FA 2C 05 01 FF F0 
+[13:41:14] : writing packet from slave
+[13:41:14] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: EA 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:14] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 18 00 00 00 0F 50 18 04 00 00 00 00 00 
+[13:41:14] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:14] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:14] : jumping to byte: 68
+[13:41:14] : written to byte: 68
+[13:41:15] : ip_read_bytes: reading
+[13:41:15] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:15] : ip_read_bytes: bytes received: 10
+[13:41:15] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:15] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:15] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:15] : found frame(fixed length) at buffer[0-4]
+[13:41:15] : writing packet from master
+[13:41:15] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:15] : output_Handler : write STDOUT - RAW DATA: EB 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:15] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:15] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:15] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:15] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:15] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:15] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 0F 00 00 04 1D 50 18 04 00 00 00 00 00 
+[13:41:15] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:15] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:15] : jumping to byte: 5
+[13:41:15] : found frame(fixed length) at buffer[5-9]
+[13:41:15] : writing packet from slave
+[13:41:15] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:15] : output_Handler : write STDOUT - RAW DATA: EB 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:15] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:15] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:15] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:15] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:15] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:15] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 1D 00 00 00 14 50 18 04 00 00 00 00 00 
+[13:41:15] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:15] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:15] : jumping to byte: 10
+[13:41:15] : written to byte: 10
+[13:41:16] : ip_read_bytes: reading
+[13:41:16] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:16] : ip_read_bytes: bytes received: 10
+[13:41:16] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:16] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:16] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:16] : found frame(fixed length) at buffer[0-4]
+[13:41:16] : writing packet from master
+[13:41:16] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:16] : output_Handler : write STDOUT - RAW DATA: EC 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:16] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:16] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:16] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:16] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:16] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:16] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 14 00 00 04 22 50 18 04 00 00 00 00 00 
+[13:41:16] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:16] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:16] : jumping to byte: 5
+[13:41:16] : found frame(fixed length) at buffer[5-9]
+[13:41:16] : writing packet from slave
+[13:41:16] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:16] : output_Handler : write STDOUT - RAW DATA: EC 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:16] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:16] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:16] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:17] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:17] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:17] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 22 00 00 00 19 50 18 04 00 00 00 00 00 
+[13:41:17] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:17] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:17] : jumping to byte: 10
+[13:41:17] : written to byte: 10
+[13:41:18] : ip_read_bytes: reading
+[13:41:18] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:18] : ip_read_bytes: bytes received: 10
+[13:41:18] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:18] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:18] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:18] : found frame(fixed length) at buffer[0-4]
+[13:41:18] : writing packet from master
+[13:41:18] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:18] : output_Handler : write STDOUT - RAW DATA: EE 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:18] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:18] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:18] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:18] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:18] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:18] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 19 00 00 04 27 50 18 04 00 00 00 00 00 
+[13:41:18] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:18] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:18] : jumping to byte: 5
+[13:41:18] : found frame(fixed length) at buffer[5-9]
+[13:41:18] : writing packet from slave
+[13:41:18] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:18] : output_Handler : write STDOUT - RAW DATA: EE 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:18] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:18] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:18] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:18] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:18] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:18] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 27 00 00 00 1E 50 18 04 00 00 00 00 00 
+[13:41:18] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:18] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:18] : jumping to byte: 10
+[13:41:18] : written to byte: 10
+[13:41:19] : ip_read_bytes: reading
+[13:41:19] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:19] : ip_read_bytes: bytes received: 10
+[13:41:19] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:19] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:19] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:19] : found frame(fixed length) at buffer[0-4]
+[13:41:19] : writing packet from master
+[13:41:19] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:19] : output_Handler : write STDOUT - RAW DATA: EF 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:19] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:19] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:19] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:19] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:19] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:19] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 1E 00 00 04 2C 50 18 04 00 00 00 00 00 
+[13:41:19] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:19] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:19] : jumping to byte: 5
+[13:41:19] : found frame(fixed length) at buffer[5-9]
+[13:41:19] : writing packet from slave
+[13:41:19] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:19] : output_Handler : write STDOUT - RAW DATA: EF 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:19] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:19] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:19] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:19] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:19] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:19] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 2C 00 00 00 23 50 18 04 00 00 00 00 00 
+[13:41:19] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:19] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:19] : jumping to byte: 10
+[13:41:19] : written to byte: 10
+[13:41:20] : ip_read_bytes: reading
+[13:41:20] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:20] : ip_read_bytes: bytes received: 10
+[13:41:20] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:20] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:20] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:20] : found frame(fixed length) at buffer[0-4]
+[13:41:20] : writing packet from master
+[13:41:20] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:20] : output_Handler : write STDOUT - RAW DATA: F0 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:20] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:20] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:20] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:20] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:20] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:20] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 23 00 00 04 31 50 18 04 00 00 00 00 00 
+[13:41:20] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:20] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:20] : jumping to byte: 5
+[13:41:20] : found frame(fixed length) at buffer[5-9]
+[13:41:20] : writing packet from slave
+[13:41:20] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:20] : output_Handler : write STDOUT - RAW DATA: F0 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:20] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:20] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:20] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:20] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:20] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:20] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 31 00 00 00 28 50 18 04 00 00 00 00 00 
+[13:41:20] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:20] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:20] : jumping to byte: 10
+[13:41:20] : written to byte: 10
+[13:41:21] : ip_read_bytes: reading
+[13:41:21] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:21] : ip_read_bytes: bytes received: 10
+[13:41:21] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:21] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:21] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:21] : found frame(fixed length) at buffer[0-4]
+[13:41:21] : writing packet from master
+[13:41:21] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:21] : output_Handler : write STDOUT - RAW DATA: F1 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:21] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:21] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:21] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:21] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:21] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:21] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 28 00 00 04 36 50 18 04 00 00 00 00 00 
+[13:41:21] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:21] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:21] : jumping to byte: 5
+[13:41:21] : found frame(fixed length) at buffer[5-9]
+[13:41:21] : writing packet from slave
+[13:41:21] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:21] : output_Handler : write STDOUT - RAW DATA: F1 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:21] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:21] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:21] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:21] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:21] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:21] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 36 00 00 00 2D 50 18 04 00 00 00 00 00 
+[13:41:21] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:21] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:21] : jumping to byte: 10
+[13:41:21] : written to byte: 10
+[13:41:22] : ip_read_bytes: reading
+[13:41:22] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:22] : ip_read_bytes: bytes received: 10
+[13:41:22] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:22] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:22] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:22] : found frame(fixed length) at buffer[0-4]
+[13:41:22] : writing packet from master
+[13:41:22] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:22] : output_Handler : write STDOUT - RAW DATA: F2 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:22] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:22] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:22] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:22] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:22] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:22] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 2D 00 00 04 3B 50 18 04 00 00 00 00 00 
+[13:41:22] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:22] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:22] : jumping to byte: 5
+[13:41:22] : found frame(fixed length) at buffer[5-9]
+[13:41:22] : writing packet from slave
+[13:41:22] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:22] : output_Handler : write STDOUT - RAW DATA: F2 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:22] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:22] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:22] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:22] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:22] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:22] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 3B 00 00 00 32 50 18 04 00 00 00 00 00 
+[13:41:22] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:22] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:22] : jumping to byte: 10
+[13:41:22] : written to byte: 10
+[13:41:23] : ip_read_bytes: reading
+[13:41:23] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:23] : ip_read_bytes: bytes received: 10
+[13:41:23] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:23] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:23] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:23] : found frame(fixed length) at buffer[0-4]
+[13:41:23] : writing packet from master
+[13:41:23] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:23] : output_Handler : write STDOUT - RAW DATA: F3 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:23] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:23] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:23] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:23] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:23] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:23] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 32 00 00 04 40 50 18 04 00 00 00 00 00 
+[13:41:23] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:23] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:23] : jumping to byte: 5
+[13:41:23] : found frame(fixed length) at buffer[5-9]
+[13:41:23] : writing packet from slave
+[13:41:23] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:23] : output_Handler : write STDOUT - RAW DATA: F3 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:23] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:23] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:23] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:23] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:23] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:23] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 40 00 00 00 37 50 18 04 00 00 00 00 00 
+[13:41:23] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:23] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:23] : jumping to byte: 10
+[13:41:23] : written to byte: 10
+[13:41:24] : ip_read_bytes: reading
+[13:41:24] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:24] : ip_read_bytes: bytes received: 10
+[13:41:24] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:24] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:24] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:24] : found frame(fixed length) at buffer[0-4]
+[13:41:24] : writing packet from master
+[13:41:24] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:24] : output_Handler : write STDOUT - RAW DATA: F4 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:24] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:24] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:24] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:24] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:24] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:24] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 37 00 00 04 45 50 18 04 00 00 00 00 00 
+[13:41:24] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:24] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:24] : jumping to byte: 5
+[13:41:24] : found frame(fixed length) at buffer[5-9]
+[13:41:24] : writing packet from slave
+[13:41:24] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:24] : output_Handler : write STDOUT - RAW DATA: F4 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:24] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:24] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:24] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:24] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:24] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:24] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 45 00 00 00 3C 50 18 04 00 00 00 00 00 
+[13:41:24] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:24] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:24] : jumping to byte: 10
+[13:41:24] : written to byte: 10
+[13:41:25] : ip_read_bytes: reading
+[13:41:25] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:25] : ip_read_bytes: bytes received: 10
+[13:41:25] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:25] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:25] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:25] : found frame(fixed length) at buffer[0-4]
+[13:41:25] : writing packet from master
+[13:41:25] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:25] : output_Handler : write STDOUT - RAW DATA: F5 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:25] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:25] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:25] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:25] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:25] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:25] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 3C 00 00 04 4A 50 18 04 00 00 00 00 00 
+[13:41:25] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:25] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:25] : jumping to byte: 5
+[13:41:25] : found frame(fixed length) at buffer[5-9]
+[13:41:25] : writing packet from slave
+[13:41:25] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:25] : output_Handler : write STDOUT - RAW DATA: F5 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:25] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:25] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:25] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:25] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:25] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:25] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 4A 00 00 00 41 50 18 04 00 00 00 00 00 
+[13:41:25] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:25] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:25] : jumping to byte: 10
+[13:41:25] : written to byte: 10
+[13:41:26] : ip_read_bytes: reading
+[13:41:26] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:26] : ip_read_bytes: bytes received: 10
+[13:41:26] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:26] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:26] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:26] : found frame(fixed length) at buffer[0-4]
+[13:41:26] : writing packet from master
+[13:41:26] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:26] : output_Handler : write STDOUT - RAW DATA: F6 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:26] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:26] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:26] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:26] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:26] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:26] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 41 00 00 04 4F 50 18 04 00 00 00 00 00 
+[13:41:26] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:26] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:26] : jumping to byte: 5
+[13:41:26] : found frame(fixed length) at buffer[5-9]
+[13:41:26] : writing packet from slave
+[13:41:26] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:26] : output_Handler : write STDOUT - RAW DATA: F6 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:26] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:26] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:26] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:26] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:26] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:26] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 4F 00 00 00 46 50 18 04 00 00 00 00 00 
+[13:41:26] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:26] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:26] : jumping to byte: 10
+[13:41:26] : written to byte: 10
+[13:41:27] : ip_read_bytes: reading
+[13:41:27] : ip_read_bytes: bytes in TCP buffer: 46 bytes free in localBuffer: 330 bytes to process: 46
+[13:41:27] : ip_read_bytes: bytes received: 46
+[13:41:27] : Buffer_Handler : data added - RAW DATA: 68 0C 0C 68 73 01 64 01 06 00 E8 03 00 00 00 14 DE 16 10 00 01 01 16 10 5B 01 5C 16 68 0C 0C 68 08 01 64 01 07 00 E8 03 00 00 00 14 74 16 
+[13:41:27] : Buffer_Handler : 46 bytes in buffer: 68 0C 0C 68 73 01 64 01 06 00 E8 03 00 00 00 14 DE 16 10 00 01 01 16 10 5B 01 5C 16 68 0C 0C 68 08 01 64 01 07 00 E8 03 00 00 00 14 74 16 
+[13:41:27] : Packetizer: got data: 68 0C 0C 68 73 01 64 01 06 00 E8 03 00 00 00 14 DE 16 10 00 01 01 16 10 5B 01 5C 16 68 0C 0C 68 08 01 64 01 07 00 E8 03 00 00 00 14 74 16 
+[13:41:27] : found variable length frame at buffer[0-17]
+[13:41:27] : writing packet from master
+[13:41:27] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: F7 20 7D 67 00 00 00 00 48 00 00 00 48 00 00 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 45 00 00 3A 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:27] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 46 00 00 04 54 50 18 04 00 00 00 00 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 18 - written by fwrite: 18
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 68 0C 0C 68 73 01 64 01 06 00 E8 03 00 00 00 14 DE 16 
+[13:41:27] : jumping to byte: 18
+[13:41:27] : found frame(fixed length) at buffer[18-22]
+[13:41:27] : writing packet from slave
+[13:41:27] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: F7 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:27] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 54 00 00 00 58 50 18 04 00 00 00 00 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 10 00 01 01 16 
+[13:41:27] : jumping to byte: 23
+[13:41:27] : found frame(fixed length) at buffer[23-27]
+[13:41:27] : writing packet from master
+[13:41:27] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: F7 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:27] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 58 00 00 04 59 50 18 04 00 00 00 00 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:27] : jumping to byte: 28
+[13:41:27] : found variable length frame at buffer[28-45]
+[13:41:27] : writing packet from slave
+[13:41:27] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: F7 20 7D 67 00 00 00 00 48 00 00 00 48 00 00 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 45 00 00 3A 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:27] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 59 00 00 00 5D 50 18 04 00 00 00 00 00 
+[13:41:27] : output_handler: writing to stdout bytecount: 18 - written by fwrite: 18
+[13:41:27] : output_Handler : write STDOUT - RAW DATA: 68 0C 0C 68 08 01 64 01 07 00 E8 03 00 00 00 14 74 16 
+[13:41:27] : jumping to byte: 46
+[13:41:27] : written to byte: 46
+[13:41:28] : ip_read_bytes: reading
+[13:41:28] : ip_read_bytes: bytes in TCP buffer: 26 bytes free in localBuffer: 330 bytes to process: 26
+[13:41:28] : ip_read_bytes: bytes received: 26
+[13:41:28] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 68 0F 0F 68 08 01 01 84 14 00 E8 03 64 00 00 00 00 00 00 F1 16 
+[13:41:28] : Buffer_Handler : 26 bytes in buffer: 10 7B 01 7C 16 68 0F 0F 68 08 01 01 84 14 00 E8 03 64 00 00 00 00 00 00 F1 16 
+[13:41:28] : Packetizer: got data: 10 7B 01 7C 16 68 0F 0F 68 08 01 01 84 14 00 E8 03 64 00 00 00 00 00 00 F1 16 
+[13:41:28] : found frame(fixed length) at buffer[0-4]
+[13:41:28] : writing packet from master
+[13:41:28] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:28] : output_Handler : write STDOUT - RAW DATA: F8 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:28] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:28] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:28] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:28] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:28] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:28] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 5D 00 00 04 6B 50 18 04 00 00 00 00 00 
+[13:41:28] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:28] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:28] : jumping to byte: 5
+[13:41:28] : found variable length frame at buffer[5-25]
+[13:41:28] : writing packet from slave
+[13:41:28] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:28] : output_Handler : write STDOUT - RAW DATA: F8 20 7D 67 00 00 00 00 4B 00 00 00 4B 00 00 00 
+[13:41:28] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:28] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:28] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:28] : output_Handler : write STDOUT - RAW DATA: 45 00 00 3D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:28] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:28] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 6B 00 00 00 62 50 18 04 00 00 00 00 00 
+[13:41:28] : output_handler: writing to stdout bytecount: 21 - written by fwrite: 21
+[13:41:28] : output_Handler : write STDOUT - RAW DATA: 68 0F 0F 68 08 01 01 84 14 00 E8 03 64 00 00 00 00 00 00 F1 16 
+[13:41:28] : jumping to byte: 26
+[13:41:28] : written to byte: 26
+[13:41:29] : ip_read_bytes: reading
+[13:41:29] : ip_read_bytes: bytes in TCP buffer: 23 bytes free in localBuffer: 330 bytes to process: 23
+[13:41:29] : ip_read_bytes: bytes received: 23
+[13:41:29] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 68 0C 0C 68 08 01 64 01 0A 00 E8 03 00 00 00 14 77 16 
+[13:41:29] : Buffer_Handler : 23 bytes in buffer: 10 5B 01 5C 16 68 0C 0C 68 08 01 64 01 0A 00 E8 03 00 00 00 14 77 16 
+[13:41:29] : Packetizer: got data: 10 5B 01 5C 16 68 0C 0C 68 08 01 64 01 0A 00 E8 03 00 00 00 14 77 16 
+[13:41:29] : found frame(fixed length) at buffer[0-4]
+[13:41:29] : writing packet from master
+[13:41:29] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:29] : output_Handler : write STDOUT - RAW DATA: F9 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:29] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:29] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:29] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:29] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:29] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:29] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 62 00 00 04 80 50 18 04 00 00 00 00 00 
+[13:41:29] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:29] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:29] : jumping to byte: 5
+[13:41:29] : found variable length frame at buffer[5-22]
+[13:41:29] : writing packet from slave
+[13:41:29] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:29] : output_Handler : write STDOUT - RAW DATA: F9 20 7D 67 00 00 00 00 48 00 00 00 48 00 00 00 
+[13:41:29] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:29] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:29] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:29] : output_Handler : write STDOUT - RAW DATA: 45 00 00 3A 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:29] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:29] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 80 00 00 00 67 50 18 04 00 00 00 00 00 
+[13:41:29] : output_handler: writing to stdout bytecount: 18 - written by fwrite: 18
+[13:41:29] : output_Handler : write STDOUT - RAW DATA: 68 0C 0C 68 08 01 64 01 0A 00 E8 03 00 00 00 14 77 16 
+[13:41:29] : jumping to byte: 23
+[13:41:29] : written to byte: 23
+[13:41:30] : ip_read_bytes: reading
+[13:41:30] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:30] : ip_read_bytes: bytes received: 10
+[13:41:30] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:30] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:30] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:30] : found frame(fixed length) at buffer[0-4]
+[13:41:30] : writing packet from master
+[13:41:30] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:30] : output_Handler : write STDOUT - RAW DATA: FA 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:30] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:30] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:30] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:30] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:30] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:30] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 67 00 00 04 92 50 18 04 00 00 00 00 00 
+[13:41:30] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:30] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:30] : jumping to byte: 5
+[13:41:30] : found frame(fixed length) at buffer[5-9]
+[13:41:30] : writing packet from slave
+[13:41:30] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:30] : output_Handler : write STDOUT - RAW DATA: FA 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:30] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:30] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:30] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:30] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:30] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:30] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 92 00 00 00 6C 50 18 04 00 00 00 00 00 
+[13:41:30] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:30] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:30] : jumping to byte: 10
+[13:41:30] : written to byte: 10
+[13:41:31] : ip_read_bytes: reading
+[13:41:31] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:31] : ip_read_bytes: bytes received: 10
+[13:41:31] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:31] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:31] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:31] : found frame(fixed length) at buffer[0-4]
+[13:41:31] : writing packet from master
+[13:41:31] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:31] : output_Handler : write STDOUT - RAW DATA: FB 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:31] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:31] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:31] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:31] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:31] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:31] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 6C 00 00 04 97 50 18 04 00 00 00 00 00 
+[13:41:31] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:31] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:31] : jumping to byte: 5
+[13:41:31] : found frame(fixed length) at buffer[5-9]
+[13:41:31] : writing packet from slave
+[13:41:31] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:31] : output_Handler : write STDOUT - RAW DATA: FB 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:31] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:31] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:31] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:31] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:31] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:31] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 97 00 00 00 71 50 18 04 00 00 00 00 00 
+[13:41:31] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:31] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:31] : jumping to byte: 10
+[13:41:31] : written to byte: 10
+[13:41:32] : ip_read_bytes: reading
+[13:41:32] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:32] : ip_read_bytes: bytes received: 10
+[13:41:32] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:32] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:32] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:32] : found frame(fixed length) at buffer[0-4]
+[13:41:32] : writing packet from master
+[13:41:32] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:32] : output_Handler : write STDOUT - RAW DATA: FC 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:32] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:32] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:32] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:32] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:32] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:32] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 71 00 00 04 9C 50 18 04 00 00 00 00 00 
+[13:41:32] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:32] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:32] : jumping to byte: 5
+[13:41:32] : found frame(fixed length) at buffer[5-9]
+[13:41:32] : writing packet from slave
+[13:41:32] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:32] : output_Handler : write STDOUT - RAW DATA: FC 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:32] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:32] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:32] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:32] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:32] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:32] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 9C 00 00 00 76 50 18 04 00 00 00 00 00 
+[13:41:32] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:32] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:32] : jumping to byte: 10
+[13:41:32] : written to byte: 10
+[13:41:33] : ip_read_bytes: reading
+[13:41:33] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:33] : ip_read_bytes: bytes received: 10
+[13:41:33] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:33] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:33] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:33] : found frame(fixed length) at buffer[0-4]
+[13:41:33] : writing packet from master
+[13:41:33] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:33] : output_Handler : write STDOUT - RAW DATA: FD 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:33] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:33] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:33] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:33] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:33] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:33] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 76 00 00 04 A1 50 18 04 00 00 00 00 00 
+[13:41:33] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:33] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:33] : jumping to byte: 5
+[13:41:33] : found frame(fixed length) at buffer[5-9]
+[13:41:33] : writing packet from slave
+[13:41:33] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:33] : output_Handler : write STDOUT - RAW DATA: FD 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:33] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:33] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:33] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:33] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:33] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:33] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 A1 00 00 00 7B 50 18 04 00 00 00 00 00 
+[13:41:33] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:33] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:33] : jumping to byte: 10
+[13:41:33] : written to byte: 10
+[13:41:34] : ip_read_bytes: reading
+[13:41:34] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:34] : ip_read_bytes: bytes received: 10
+[13:41:34] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:34] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:34] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:34] : found frame(fixed length) at buffer[0-4]
+[13:41:34] : writing packet from master
+[13:41:34] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:34] : output_Handler : write STDOUT - RAW DATA: FE 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:34] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:34] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:34] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:34] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:34] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:34] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 7B 00 00 04 A6 50 18 04 00 00 00 00 00 
+[13:41:34] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:34] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:34] : jumping to byte: 5
+[13:41:34] : found frame(fixed length) at buffer[5-9]
+[13:41:34] : writing packet from slave
+[13:41:34] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:34] : output_Handler : write STDOUT - RAW DATA: FE 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:34] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:34] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:34] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:34] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:34] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:34] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 A6 00 00 00 80 50 18 04 00 00 00 00 00 
+[13:41:34] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:34] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:34] : jumping to byte: 10
+[13:41:34] : written to byte: 10
+[13:41:35] : ip_read_bytes: reading
+[13:41:35] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:35] : ip_read_bytes: bytes received: 10
+[13:41:35] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:35] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:35] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:35] : found frame(fixed length) at buffer[0-4]
+[13:41:35] : writing packet from master
+[13:41:35] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:35] : output_Handler : write STDOUT - RAW DATA: FF 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:35] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:35] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:35] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:35] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:35] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:35] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 80 00 00 04 AB 50 18 04 00 00 00 00 00 
+[13:41:35] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:35] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:35] : jumping to byte: 5
+[13:41:35] : found frame(fixed length) at buffer[5-9]
+[13:41:35] : writing packet from slave
+[13:41:35] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:35] : output_Handler : write STDOUT - RAW DATA: FF 20 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:35] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:35] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:35] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:35] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:35] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:35] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 AB 00 00 00 85 50 18 04 00 00 00 00 00 
+[13:41:35] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:35] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:35] : jumping to byte: 10
+[13:41:35] : written to byte: 10
+[13:41:36] : ip_read_bytes: reading
+[13:41:36] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:36] : ip_read_bytes: bytes received: 10
+[13:41:36] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:36] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:36] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:36] : found frame(fixed length) at buffer[0-4]
+[13:41:36] : writing packet from master
+[13:41:36] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:36] : output_Handler : write STDOUT - RAW DATA: 00 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:36] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:36] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:36] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:36] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:36] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:36] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 85 00 00 04 B0 50 18 04 00 00 00 00 00 
+[13:41:36] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:36] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:36] : jumping to byte: 5
+[13:41:36] : found frame(fixed length) at buffer[5-9]
+[13:41:36] : writing packet from slave
+[13:41:36] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:36] : output_Handler : write STDOUT - RAW DATA: 00 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:36] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:36] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:36] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:36] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:36] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:36] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 B0 00 00 00 8A 50 18 04 00 00 00 00 00 
+[13:41:36] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:36] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:36] : jumping to byte: 10
+[13:41:36] : written to byte: 10
+[13:41:37] : ip_read_bytes: reading
+[13:41:37] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:37] : ip_read_bytes: bytes received: 10
+[13:41:37] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:37] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:37] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:37] : found frame(fixed length) at buffer[0-4]
+[13:41:37] : writing packet from master
+[13:41:37] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:37] : output_Handler : write STDOUT - RAW DATA: 01 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:37] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:37] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:37] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:37] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:37] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:37] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 8A 00 00 04 B5 50 18 04 00 00 00 00 00 
+[13:41:37] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:37] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:37] : jumping to byte: 5
+[13:41:37] : found frame(fixed length) at buffer[5-9]
+[13:41:37] : writing packet from slave
+[13:41:37] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:37] : output_Handler : write STDOUT - RAW DATA: 01 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:37] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:37] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:37] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:37] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:37] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:37] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 B5 00 00 00 8F 50 18 04 00 00 00 00 00 
+[13:41:37] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:37] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:37] : jumping to byte: 10
+[13:41:37] : written to byte: 10
+[13:41:38] : ip_read_bytes: reading
+[13:41:38] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:38] : ip_read_bytes: bytes received: 10
+[13:41:38] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:38] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:38] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:38] : found frame(fixed length) at buffer[0-4]
+[13:41:38] : writing packet from master
+[13:41:38] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:38] : output_Handler : write STDOUT - RAW DATA: 02 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:38] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:38] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:38] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:38] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:38] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:38] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 8F 00 00 04 BA 50 18 04 00 00 00 00 00 
+[13:41:38] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:38] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:38] : jumping to byte: 5
+[13:41:38] : found frame(fixed length) at buffer[5-9]
+[13:41:38] : writing packet from slave
+[13:41:38] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:38] : output_Handler : write STDOUT - RAW DATA: 02 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:38] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:38] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:38] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:38] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:38] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:38] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 BA 00 00 00 94 50 18 04 00 00 00 00 00 
+[13:41:38] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:38] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:38] : jumping to byte: 10
+[13:41:38] : written to byte: 10
+[13:41:39] : ip_read_bytes: reading
+[13:41:39] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:39] : ip_read_bytes: bytes received: 10
+[13:41:39] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:39] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:39] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:39] : found frame(fixed length) at buffer[0-4]
+[13:41:39] : writing packet from master
+[13:41:39] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:39] : output_Handler : write STDOUT - RAW DATA: 03 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:39] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:39] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:39] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:39] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:39] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:39] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 94 00 00 04 BF 50 18 04 00 00 00 00 00 
+[13:41:39] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:39] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:39] : jumping to byte: 5
+[13:41:39] : found frame(fixed length) at buffer[5-9]
+[13:41:39] : writing packet from slave
+[13:41:39] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:39] : output_Handler : write STDOUT - RAW DATA: 03 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:39] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:39] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:39] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:39] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:39] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:39] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 BF 00 00 00 99 50 18 04 00 00 00 00 00 
+[13:41:39] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:39] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:39] : jumping to byte: 10
+[13:41:39] : written to byte: 10
+[13:41:40] : ip_read_bytes: reading
+[13:41:40] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:40] : ip_read_bytes: bytes received: 10
+[13:41:40] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:40] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:40] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:40] : found frame(fixed length) at buffer[0-4]
+[13:41:40] : writing packet from master
+[13:41:40] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:40] : output_Handler : write STDOUT - RAW DATA: 04 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:40] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:40] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:40] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:40] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:40] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:40] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 99 00 00 04 C4 50 18 04 00 00 00 00 00 
+[13:41:40] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:40] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:40] : jumping to byte: 5
+[13:41:40] : found frame(fixed length) at buffer[5-9]
+[13:41:40] : writing packet from slave
+[13:41:40] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:40] : output_Handler : write STDOUT - RAW DATA: 04 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:40] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:40] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:40] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:40] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:40] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:40] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 C4 00 00 00 9E 50 18 04 00 00 00 00 00 
+[13:41:40] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:40] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:40] : jumping to byte: 10
+[13:41:40] : written to byte: 10
+[13:41:41] : ip_read_bytes: reading
+[13:41:41] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:41] : ip_read_bytes: bytes received: 10
+[13:41:41] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:41] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:41] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:41] : found frame(fixed length) at buffer[0-4]
+[13:41:41] : writing packet from master
+[13:41:41] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:41] : output_Handler : write STDOUT - RAW DATA: 05 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:41] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:41] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:41] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:41] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:41] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:41] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 9E 00 00 04 C9 50 18 04 00 00 00 00 00 
+[13:41:41] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:41] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:41] : jumping to byte: 5
+[13:41:41] : found frame(fixed length) at buffer[5-9]
+[13:41:41] : writing packet from slave
+[13:41:41] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:41] : output_Handler : write STDOUT - RAW DATA: 05 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:41] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:41] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:41] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:41] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:41] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:41] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 C9 00 00 00 A3 50 18 04 00 00 00 00 00 
+[13:41:41] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:41] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:41] : jumping to byte: 10
+[13:41:41] : written to byte: 10
+[13:41:42] : ip_read_bytes: reading
+[13:41:42] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:42] : ip_read_bytes: bytes received: 10
+[13:41:42] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:42] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:42] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:42] : found frame(fixed length) at buffer[0-4]
+[13:41:42] : writing packet from master
+[13:41:42] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:42] : output_Handler : write STDOUT - RAW DATA: 06 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:42] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:42] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:42] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:42] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:42] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:42] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 A3 00 00 04 CE 50 18 04 00 00 00 00 00 
+[13:41:42] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:42] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:42] : jumping to byte: 5
+[13:41:42] : found frame(fixed length) at buffer[5-9]
+[13:41:42] : writing packet from slave
+[13:41:42] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:42] : output_Handler : write STDOUT - RAW DATA: 06 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:42] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:42] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:42] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:42] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:42] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:42] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 CE 00 00 00 A8 50 18 04 00 00 00 00 00 
+[13:41:42] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:42] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:42] : jumping to byte: 10
+[13:41:42] : written to byte: 10
+[13:41:43] : ip_read_bytes: reading
+[13:41:43] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:43] : ip_read_bytes: bytes received: 10
+[13:41:43] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:43] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:43] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:43] : found frame(fixed length) at buffer[0-4]
+[13:41:43] : writing packet from master
+[13:41:43] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:43] : output_Handler : write STDOUT - RAW DATA: 07 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:43] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:43] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:43] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:43] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:43] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:43] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 A8 00 00 04 D3 50 18 04 00 00 00 00 00 
+[13:41:43] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:43] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:43] : jumping to byte: 5
+[13:41:43] : found frame(fixed length) at buffer[5-9]
+[13:41:43] : writing packet from slave
+[13:41:43] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:43] : output_Handler : write STDOUT - RAW DATA: 07 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:43] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:43] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:43] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:43] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:43] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:43] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 D3 00 00 00 AD 50 18 04 00 00 00 00 00 
+[13:41:43] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:43] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:43] : jumping to byte: 10
+[13:41:43] : written to byte: 10
+[13:41:44] : ip_read_bytes: reading
+[13:41:44] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:44] : ip_read_bytes: bytes received: 10
+[13:41:44] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:44] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:44] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:44] : found frame(fixed length) at buffer[0-4]
+[13:41:44] : writing packet from master
+[13:41:44] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:44] : output_Handler : write STDOUT - RAW DATA: 08 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:44] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:44] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:44] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:44] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:44] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:44] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 AD 00 00 04 D8 50 18 04 00 00 00 00 00 
+[13:41:44] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:44] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:44] : jumping to byte: 5
+[13:41:44] : found frame(fixed length) at buffer[5-9]
+[13:41:44] : writing packet from slave
+[13:41:44] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:44] : output_Handler : write STDOUT - RAW DATA: 08 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:44] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:44] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:44] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:44] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:44] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:44] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 D8 00 00 00 B2 50 18 04 00 00 00 00 00 
+[13:41:44] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:44] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:44] : jumping to byte: 10
+[13:41:44] : written to byte: 10
+[13:41:45] : ip_read_bytes: reading
+[13:41:45] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:45] : ip_read_bytes: bytes received: 10
+[13:41:45] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:45] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:45] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:45] : found frame(fixed length) at buffer[0-4]
+[13:41:45] : writing packet from master
+[13:41:45] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:45] : output_Handler : write STDOUT - RAW DATA: 09 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:45] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:45] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:45] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:45] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:45] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:45] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 B2 00 00 04 DD 50 18 04 00 00 00 00 00 
+[13:41:45] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:45] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:45] : jumping to byte: 5
+[13:41:45] : found frame(fixed length) at buffer[5-9]
+[13:41:45] : writing packet from slave
+[13:41:45] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:45] : output_Handler : write STDOUT - RAW DATA: 09 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:45] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:45] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:45] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:45] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:45] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:45] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 DD 00 00 00 B7 50 18 04 00 00 00 00 00 
+[13:41:45] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:45] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:45] : jumping to byte: 10
+[13:41:45] : written to byte: 10
+[13:41:46] : ip_read_bytes: reading
+[13:41:46] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:46] : ip_read_bytes: bytes received: 10
+[13:41:46] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:46] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:46] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:46] : found frame(fixed length) at buffer[0-4]
+[13:41:46] : writing packet from master
+[13:41:46] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:46] : output_Handler : write STDOUT - RAW DATA: 0A 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:46] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:46] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:46] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:46] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:46] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:46] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 B7 00 00 04 E2 50 18 04 00 00 00 00 00 
+[13:41:46] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:46] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:46] : jumping to byte: 5
+[13:41:46] : found frame(fixed length) at buffer[5-9]
+[13:41:46] : writing packet from slave
+[13:41:46] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:46] : output_Handler : write STDOUT - RAW DATA: 0A 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:46] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:46] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:46] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:46] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:46] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:46] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 E2 00 00 00 BC 50 18 04 00 00 00 00 00 
+[13:41:46] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:46] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:46] : jumping to byte: 10
+[13:41:46] : written to byte: 10
+[13:41:47] : ip_read_bytes: reading
+[13:41:47] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:47] : ip_read_bytes: bytes received: 10
+[13:41:47] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:47] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:47] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:47] : found frame(fixed length) at buffer[0-4]
+[13:41:47] : writing packet from master
+[13:41:47] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:47] : output_Handler : write STDOUT - RAW DATA: 0B 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:47] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:47] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:47] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:47] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:47] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:47] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 BC 00 00 04 E7 50 18 04 00 00 00 00 00 
+[13:41:47] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:47] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:47] : jumping to byte: 5
+[13:41:47] : found frame(fixed length) at buffer[5-9]
+[13:41:47] : writing packet from slave
+[13:41:47] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:47] : output_Handler : write STDOUT - RAW DATA: 0B 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:47] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:47] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:47] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:47] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:47] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:47] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 E7 00 00 00 C1 50 18 04 00 00 00 00 00 
+[13:41:47] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:47] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:47] : jumping to byte: 10
+[13:41:47] : written to byte: 10
+[13:41:48] : ip_read_bytes: reading
+[13:41:48] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:48] : ip_read_bytes: bytes received: 10
+[13:41:48] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:48] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:48] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:48] : found frame(fixed length) at buffer[0-4]
+[13:41:48] : writing packet from master
+[13:41:48] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:48] : output_Handler : write STDOUT - RAW DATA: 0C 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:48] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:48] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:48] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:48] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:48] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:48] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 C1 00 00 04 EC 50 18 04 00 00 00 00 00 
+[13:41:48] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:48] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:48] : jumping to byte: 5
+[13:41:48] : found frame(fixed length) at buffer[5-9]
+[13:41:48] : writing packet from slave
+[13:41:48] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:48] : output_Handler : write STDOUT - RAW DATA: 0C 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:48] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:48] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:48] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:48] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:48] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:48] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 EC 00 00 00 C6 50 18 04 00 00 00 00 00 
+[13:41:48] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:48] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:48] : jumping to byte: 10
+[13:41:48] : written to byte: 10
+[13:41:49] : ip_read_bytes: reading
+[13:41:49] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:49] : ip_read_bytes: bytes received: 10
+[13:41:49] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:49] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:49] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:49] : found frame(fixed length) at buffer[0-4]
+[13:41:49] : writing packet from master
+[13:41:49] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:49] : output_Handler : write STDOUT - RAW DATA: 0D 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:49] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:49] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:49] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:49] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:49] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:49] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 C6 00 00 04 F1 50 18 04 00 00 00 00 00 
+[13:41:49] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:49] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:49] : jumping to byte: 5
+[13:41:49] : found frame(fixed length) at buffer[5-9]
+[13:41:49] : writing packet from slave
+[13:41:49] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:49] : output_Handler : write STDOUT - RAW DATA: 0D 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:49] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:49] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:49] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:49] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:49] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:49] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 F1 00 00 00 CB 50 18 04 00 00 00 00 00 
+[13:41:49] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:49] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:49] : jumping to byte: 10
+[13:41:49] : written to byte: 10
+[13:41:50] : ip_read_bytes: reading
+[13:41:50] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:50] : ip_read_bytes: bytes received: 10
+[13:41:50] : Buffer_Handler : data added - RAW DATA: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:50] : Buffer_Handler : 10 bytes in buffer: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:50] : Packetizer: got data: 10 7B 01 7C 16 10 09 01 0A 16 
+[13:41:50] : found frame(fixed length) at buffer[0-4]
+[13:41:50] : writing packet from master
+[13:41:50] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:50] : output_Handler : write STDOUT - RAW DATA: 0E 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:50] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:50] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:50] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:50] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:50] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:50] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 CB 00 00 04 F6 50 18 04 00 00 00 00 00 
+[13:41:50] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:50] : output_Handler : write STDOUT - RAW DATA: 10 7B 01 7C 16 
+[13:41:50] : jumping to byte: 5
+[13:41:50] : found frame(fixed length) at buffer[5-9]
+[13:41:50] : writing packet from slave
+[13:41:50] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:50] : output_Handler : write STDOUT - RAW DATA: 0E 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:50] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:50] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:50] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:50] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:50] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:50] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 F6 00 00 00 D0 50 18 04 00 00 00 00 00 
+[13:41:50] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:50] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:50] : jumping to byte: 10
+[13:41:50] : written to byte: 10
+[13:41:51] : ip_read_bytes: reading
+[13:41:51] : ip_read_bytes: bytes in TCP buffer: 10 bytes free in localBuffer: 330 bytes to process: 10
+[13:41:51] : ip_read_bytes: bytes received: 10
+[13:41:51] : Buffer_Handler : data added - RAW DATA: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:51] : Buffer_Handler : 10 bytes in buffer: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:51] : Packetizer: got data: 10 5B 01 5C 16 10 09 01 0A 16 
+[13:41:51] : found frame(fixed length) at buffer[0-4]
+[13:41:51] : writing packet from master
+[13:41:51] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:51] : output_Handler : write STDOUT - RAW DATA: 0F 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:51] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:51] : output_Handler : write STDOUT - RAW DATA: F9 F9 F9 F9 F9 F9 A4 A4 A4 A4 A4 A4 08 00 
+[13:41:51] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:51] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 01 C0 A8 00 02 
+[13:41:51] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:51] : output_Handler : write STDOUT - RAW DATA: 09 78 04 BC 00 00 00 D0 00 00 04 FB 50 18 04 00 00 00 00 00 
+[13:41:51] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:51] : output_Handler : write STDOUT - RAW DATA: 10 5B 01 5C 16 
+[13:41:51] : jumping to byte: 5
+[13:41:51] : found frame(fixed length) at buffer[5-9]
+[13:41:51] : writing packet from slave
+[13:41:51] : output_handler: writing to stdout bytecount: 16 - written by fwrite: 16
+[13:41:51] : output_Handler : write STDOUT - RAW DATA: 0F 21 7D 67 00 00 00 00 3B 00 00 00 3B 00 00 00 
+[13:41:51] : output_handler: writing to stdout bytecount: 14 - written by fwrite: 14
+[13:41:51] : output_Handler : write STDOUT - RAW DATA: A4 A4 A4 A4 A4 A4 F9 F9 F9 F9 F9 F9 08 00 
+[13:41:51] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:51] : output_Handler : write STDOUT - RAW DATA: 45 00 00 2D 00 01 00 00 40 06 00 00 C0 A8 00 02 C0 A8 00 01 
+[13:41:51] : output_handler: writing to stdout bytecount: 20 - written by fwrite: 20
+[13:41:51] : output_Handler : write STDOUT - RAW DATA: 04 BC 09 78 00 00 04 FB 00 00 00 D5 50 18 04 00 00 00 00 00 
+[13:41:51] : output_handler: writing to stdout bytecount: 5 - written by fwrite: 5
+[13:41:51] : output_Handler : write STDOUT - RAW DATA: 10 09 01 0A 16 
+[13:41:51] : jumping to byte: 10
+[13:41:51] : written to byte: 10
+[13:41:52] : handling SIG=2. closing program...
+[13:41:52] : closing handlers
+[13:41:52] : program end
