@@ -117,8 +117,8 @@ uint8_t Input_Handler::com_read_bytes(){
 };
 
 uint8_t Input_Handler::ip_open_socket(){
-    ptrDebug->debug(2,"open_input_stream: opening TCP socket to "+tcp_input_ip+":",false);
-    ptrDebug->debug(2,tcp_input_port,true,false);
+    ptrDebug->debug(3,"ip_open_socket: opening TCP socket to "+tcp_input_ip+":",false);
+    ptrDebug->debug(3,tcp_input_port,true,false);
 
     WSADATA wsadata;
     int error = WSAStartup(0x0202, &wsadata);
@@ -153,25 +153,25 @@ uint8_t Input_Handler::ip_open_socket(){
     }
     
     //connect should have worked. check again
-    ptrDebug->debug(1,"ip_open_socket: TCP connection established");
+    ptrDebug->debug(2,"ip_open_socket: TCP connection established to "+tcp_input_ip+":",false);
+    ptrDebug->debug(2,tcp_input_port,true,false);
     input_type = enumInputStreamType::IP_PORT;
     return(0); //Success
 
 };
 
 uint8_t Input_Handler::ip_read_bytes(){
-    ptrDebug->debug(4,"ip_read_bytes: reading");
     //find out how many bytes in tcp buffer
     u_long bytesAvailable;
     int call_result = ioctlsocket(h_tcpSocket, FIONREAD, &bytesAvailable);     
     if (call_result == SOCKET_ERROR) {
-        ptrDebug->debug(2,"ip_read_bytes: error reading size of TCP buffer. Error code: ",false);
+        ptrDebug->debug(1,"ip_read_bytes: error reading size of TCP buffer. Error code: ",false);
         ptrDebug->debug(1,WSAGetLastError(),true,false);
         return(1);
     };
 
     if(bytesAvailable <= 0){
-        ptrDebug->debug(1,"ip_read_bytes: no bytes in TCP buffer.");
+        ptrDebug->debug(4,"ip_read_bytes: no bytes in TCP buffer.");
         return(0);
     };
 
@@ -193,12 +193,11 @@ uint8_t Input_Handler::ip_read_bytes(){
         bytesToRead = ptrStreamBuffer->buffer_free_bytes_left();
     }
 
-    ptrDebug->debug(4,"ip_read_bytes: bytes in TCP buffer: ",false);
-    ptrDebug->debug(4,bytesAvailable,false,false);
-    ptrDebug->debug(4," bytes free in localBuffer: ",false,false);
-    ptrDebug->debug(4,ptrStreamBuffer->buffer_free_bytes_left(),false,false);
-    ptrDebug->debug(4," bytes to process: ",false,false);
-    ptrDebug->debug(4,bytesToRead,true,false);
+    ptrDebug->debug(3,"ip_read_bytes: " + std::to_string(bytesAvailable) + " bytes in TCP buffer / " + std::to_string(ptrStreamBuffer->buffer_free_bytes_left()) + " bytes free in localBuffer / " + std::to_string(bytesToRead) + " bytes to process");
+    //ptrDebug->debug(3," bytes free in localBuffer: ",false,false);
+    //ptrDebug->debug(3,ptrStreamBuffer->buffer_free_bytes_left(),false,false);
+    //ptrDebug->debug(3," bytes to process: ",false,false);
+    //ptrDebug->debug(3,bytesToRead,true,false);
 
     //const int bufferSize = 1024;
     char* tmpBuf = new char[bytesToRead];
@@ -210,8 +209,8 @@ uint8_t Input_Handler::ip_read_bytes(){
         delete[] tmpBuf;
         return(1);
     } else {
-        ptrDebug->debug(4,"ip_read_bytes: bytes received: ",false);
-        ptrDebug->debug(4,bytesReceived,true,false);
+        ptrDebug->debug(3,"ip_read_bytes: bytes received: "  + std::to_string(bytesReceived));
+        //ptrDebug->debug(4,bytesReceived,true,false);
         //std::cout << "Received data: " << tmpBuf << std::endl;
         ptrStreamBuffer->add_data(tmpBuf,bytesToRead);
     }

@@ -60,17 +60,17 @@ uint8_t Packetizer_101::process_buffer(){
             if(i + fixed_frame_length-1 <= data_length-1){
                 if(retrieved_buffer_data[i+fixed_frame_length-1] = 0x16 ){     //fixed length = 6 byte. 6th byte must be 0x16 (end byte)
                     //found fixed-length-frame
-                    ptrDebug->debug(4,"found frame(fixed length) at buffer[",false);
-                    ptrDebug->debug(4,i,false,false);
-                    ptrDebug->debug(4,"-",false,false);
-                    ptrDebug->debug(4,i+fixed_frame_length-1,false,false);
-                    ptrDebug->debug(4,"]",true,false);
+                    ptrDebug->debug(3,"found frame(fixed length) at buffer[",false);
+                    ptrDebug->debug(3,i,false,false);
+                    ptrDebug->debug(3,"-",false,false);
+                    ptrDebug->debug(3,i+fixed_frame_length-1,false,false);
+                    ptrDebug->debug(3,"]",true,false);
                     if(i > written_up_to_byte){     //garbage data before frame start. (dont drop but write to file)
-                        ptrDebug->debug(4,"writing garbage from buffer[",false);
-                        ptrDebug->debug(4,written_up_to_byte,false,false);
-                        ptrDebug->debug(4,"-",false,false);
-                        ptrDebug->debug(4,i,false,false);
-                        ptrDebug->debug(4,"]",true,false);
+                        ptrDebug->debug(3,"writing garbage from buffer[",false);
+                        ptrDebug->debug(3,written_up_to_byte,false,false);
+                        ptrDebug->debug(3,"-",false,false);
+                        ptrDebug->debug(3,i,false,false);
+                        ptrDebug->debug(3,"]",true,false);
                         ptrPcapWriter->write_packet(retrieved_buffer_data + written_up_to_byte,i - written_up_to_byte,false);
                     }
                     //write fixed length frame to file
@@ -111,11 +111,11 @@ uint8_t Packetizer_101::process_buffer(){
                     
                     if(retrieved_buffer_data[i+telegram_total_buffer_length-1] == 0x16){     
                         //stop byte found. this is a telegram!
-                        ptrDebug->debug(4,"found variable length frame at buffer[",false);
-                        ptrDebug->debug(4,i,false,false);
-                        ptrDebug->debug(4,"-",false,false);
-                        ptrDebug->debug(4,i+telegram_total_buffer_length-1,false,false);
-                        ptrDebug->debug(4,"]",true,false);
+                        ptrDebug->debug(3,"found variable length frame at buffer[",false);
+                        ptrDebug->debug(3,i,false,false);
+                        ptrDebug->debug(3,"-",false,false);
+                        ptrDebug->debug(3,i+telegram_total_buffer_length-1,false,false);
+                        ptrDebug->debug(3,"]",true,false);
 
                         //garbage data before frame start. (dont drop but write to file)
                         if(i > written_up_to_byte){     

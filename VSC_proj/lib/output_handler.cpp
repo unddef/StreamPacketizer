@@ -9,10 +9,18 @@ Output_Handler::~Output_Handler(){
 }
 
 
-uint8_t Output_Handler::open_output_stream(enumOutputStreamType output_type , std::string filepath){
-    
+uint8_t Output_Handler::open_output_stream(std::string filepath){
+    enumOutputStreamType test_output_type = enumOutputStreamType::UNKNOWN;
+    if(filepath == "-"){
+        //output should go to stdout
+        test_output_type = enumOutputStreamType::STDOUT;
+    }else {
+        //set output
+        test_output_type = enumOutputStreamType::FILE;
+    }   
+
     //stream output to file
-    switch (output_type){
+    switch (test_output_type){
         case enumOutputStreamType::FILE :
             ptrDebug->debug(3,"output_handler: opening output file: " + filepath);
             FileHandler.open(filepath, std::ios::out | std::ios::binary);
@@ -29,7 +37,7 @@ uint8_t Output_Handler::open_output_stream(enumOutputStreamType output_type , st
         break;
 
         case enumOutputStreamType::STDOUT :
-            ptrDebug->debug(3,"using STDOUT as output stream");
+            ptrDebug->debug(3,"output_handler: using STDOUT as output stream");
             currentOutputType = enumOutputStreamType::STDOUT;
             currentOutputPath = "";
             _setmode(_fileno(stdout), O_BINARY);        //set output mode to binary to avoid problems with "random" 0x0d (new line) insertion

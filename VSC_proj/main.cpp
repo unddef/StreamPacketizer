@@ -24,15 +24,15 @@
 
 const DWORD MAIN_BUFFER_SIZE = 330;
 const DWORD MAX_TELEGRAM_LENGTH = 255;
+const int defaultDebugLevel = 2;
 
-//std::string inputStreamPath = "COM4";
-std::string inputStreamPath = "127.0.0.1:8889";
+std::string inputStreamPath = "COM1"; //default value.
+//std::string inputStreamPath = "127.0.0.1:8889";
 
-Output_Handler::enumOutputStreamType output_type = Output_Handler::enumOutputStreamType::STDOUT;
-//Output_Handler::enumOutputStreamType output_type = Output_Handler::enumOutputStreamType::FILE;
 std::string outputStreamPath = "./test_output.pcap";
+//std::string outputStreamPath = "-";
 
-Custom_Debugger debug(4);
+Custom_Debugger debug(defaultDebugLevel);
 Output_Handler  outputStream(&debug);
 Pcap_Handler     pcapFile(&debug,&outputStream);
 Buffer_Handler  streamBuffer(MAIN_BUFFER_SIZE,&debug);
@@ -50,13 +50,53 @@ void signalHandler(int signum){
 };
 
 
-uint8_t main(){
+uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
     debug.debug(1,"program start");
     //register signal handler for ctrl+c abortion
     std::signal(SIGINT, signalHandler);
     
+    //evaluate commandline options
+    for (int i = 1; i < cmd_arg_count; i++) { // Start from 1 to skip the program name
+        std::string arg = CMD_arg_value[i];
+        //option -i for input interface
+        if ( arg == "-i" ) {
+            if(i + 1 < cmd_arg_count){
+                //setting inputstreampath to string from cmd line argument 
+                inputStreamPath = CMD_arg_value[i+1];
+            }else {
+                debug.debug(1,"not enough arguments specified. exiting");
+                exit(1);
+            }
+            
+        // option -d for debug  
+        } else if (arg == "-d" ) {
+            if(i + 1 < cmd_arg_count){
+                int new_debug_lebel = std::stoi(CMD_arg_value[i+1]);
+                if(new_debug_lebel >= 0 && new_debug_lebel <= 4){
+                    debug.debug(3,"set new debug level to ",false);
+                    debug.debug(3,new_debug_lebel,true,false);
+                    debug.set_debug_level(new_debug_lebel);
+                }else{
+                    debug.debug(1,"wrong argument for -d  allowed values: 0-4");
+                }   
+            } else {
+                debug.debug(1,"not enough arguments specified. exiting");
+                exit(1);
+            }
+        //option -o for output interface
+        }else if ( arg == "-o" ) {
+            if(i + 1 < cmd_arg_count){
+                //setting inputstreampath to string from cmd line argument 
+                outputStreamPath = CMD_arg_value[i+1];
+            }else {
+                debug.debug(1,"not enough arguments specified. exiting");
+                exit(1);
+            }
+        }
+    }
+
     //open pcap file
-    outputStream.open_output_stream(output_type, outputStreamPath);
+    outputStream.open_output_stream(outputStreamPath);
     pcapFile.write_file_header();
 
     //openinput source
