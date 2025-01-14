@@ -1,9 +1,10 @@
 #include "Packetizer_101.h"
 
-Packetizer_101::Packetizer_101(Custom_Debugger* ext_debug_obj, Buffer_Handler* ext_buffer_obj,Pcap_Handler* ext_pcap_obj,uint8_t link_addr_length = 1,uint8_t asdu_addr_length = 2, uint8_t ioa_addr_length = 3){
+Packetizer_101::Packetizer_101(Custom_Debugger* ext_debug_obj, Buffer_Handler* ext_buffer_obj,Pcap_Handler* ext_pcap_obj,uint8_t link_addr_length = 1,uint8_t asdu_addr_length = 2, uint8_t ioa_addr_length = 3, uint16_t ext_max_tel_len=255){
     ptrDebug = ext_debug_obj;
     ptrBuffer = ext_buffer_obj;
     ptrPcapWriter = ext_pcap_obj;
+    max_telegram_length = ext_max_tel_len;
     if(link_addr_length >= 0 && link_addr_length <=2){
         link_addr_len = link_addr_length;
     }else{
@@ -44,7 +45,9 @@ uint8_t Packetizer_101::process_buffer(){
         for (size_t i = 0; i < data_length; i++) {
             sprintf(dumpString + i * 3, "%02X ", static_cast<unsigned char>(retrieved_buffer_data[i]));
         }
-        ptrDebug->debug(4,"Packetizer: got data: ",false);
+        ptrDebug->debug(4,"Packetizer: got ",false);
+        ptrDebug->debug(4,data_length,false,false);
+        ptrDebug->debug(4," bytes to analyse: ",false,false);
         ptrDebug->debug(4,dumpString,true,false);
         delete[] dumpString;
     }
@@ -143,8 +146,13 @@ uint8_t Packetizer_101::process_buffer(){
 
     }
 
-
-
+    if ((written_up_to_byte == 0) && (ptrBuffer->buffer_free_bytes_left() <= 0) ){
+        //buffer full but no telegram in buffer. need to write garbage data to output to free buffer space for new input
+        ptrDebug->debug(2,"Packetizer: Buffer full but no telegram only garbage. Freeing buffer space.");
+        ptrPcapWriter->write_packet(retrieved_buffer_data,max_telegram_length,false);
+        written_up_to_byte = max_telegram_length;
+    }
+    
     ptrDebug->debug(4,"written to byte: ",false);
     ptrDebug->debug(4,written_up_to_byte,true,false);
     if(written_up_to_byte > 0){
