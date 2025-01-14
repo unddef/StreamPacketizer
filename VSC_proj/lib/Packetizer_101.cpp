@@ -149,8 +149,12 @@ uint8_t Packetizer_101::process_buffer(){
     if ((written_up_to_byte == 0) && (ptrBuffer->buffer_free_bytes_left() <= 0) ){
         //buffer full but no telegram in buffer. need to write garbage data to output to free buffer space for new input
         ptrDebug->debug(2,"Packetizer: Buffer full but no telegram only garbage. Freeing buffer space.");
-        ptrPcapWriter->write_packet(retrieved_buffer_data,max_telegram_length,false);
-        written_up_to_byte = max_telegram_length;
+        uint16_t chunk_size = ptrBuffer->buffer_bytes_filled();
+        if (chunk_size > max_telegram_length){
+            chunk_size = max_telegram_length;
+        }
+        ptrPcapWriter->write_packet(retrieved_buffer_data,chunk_size,false);
+        written_up_to_byte = chunk_size;
     }
     
     ptrDebug->debug(4,"written to byte: ",false);

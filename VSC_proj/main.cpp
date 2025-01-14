@@ -24,7 +24,7 @@
 - kurzquittierung einbauen?
 //********/
 
-const DWORD MAIN_BUFFER_SIZE = 330;
+const DWORD MAIN_BUFFER_SIZE = 100;
 const uint16_t MAX_TELEGRAM_LENGTH = 255;
 const int defaultDebugLevel = 2;
 
