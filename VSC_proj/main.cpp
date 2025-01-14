@@ -16,14 +16,16 @@
 
 
 /*** TODOs****
-- buffer klasse kann voll laufen. Wenn packetizer durchgelaufen, er aber keine daten wegschreibt (also kein frame gefunden hat) und der puffer voll ist, soll alles wegeschrieben werdne.
-  alternativ: wenn buffer voller als max_telegram_size
-
 - fehlgeschlagener tcp verbindungsaufbau wird nicht erkannt. sollte das programm beenden
+- abbruch der tcp verbindung sollte erkannt werden -> exit
+- variablen:  link_addr_len, ASDU_addr_len, IOA_len in konstanten/als parameter
+
+- file input einbauen?
+- kurzquittierung einbauen?
 //********/
 
 const DWORD MAIN_BUFFER_SIZE = 330;
-const DWORD MAX_TELEGRAM_LENGTH = 255;
+const uint16_t MAX_TELEGRAM_LENGTH = 255;
 const int defaultDebugLevel = 2;
 
 std::string inputStreamPath = "COM1"; //default value.
@@ -34,10 +36,10 @@ std::string outputStreamPath = "./test_output.pcap";
 
 Custom_Debugger debug(defaultDebugLevel);
 Output_Handler  outputStream(&debug);
-Pcap_Handler     pcapFile(&debug,&outputStream);
+Pcap_Handler    pcapFile(&debug,&outputStream);
 Buffer_Handler  streamBuffer(MAIN_BUFFER_SIZE,&debug);
 Input_Handler   inputStream(&debug,&streamBuffer);
-Packetizer_101  iecPacketizer(&debug,&streamBuffer,&pcapFile,1,2,3);
+Packetizer_101  iecPacketizer(&debug,&streamBuffer,&pcapFile,1,2,3, MAX_TELEGRAM_LENGTH);
 
 
 //handle ctrl+c and other external signals
@@ -105,7 +107,7 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
     while(loopingEnabled){
         
         inputStream.read_bytes();
-        streamBuffer.dump_buffer_to_debug();
+        //streamBuffer.dump_buffer_to_debug();
         iecPacketizer.process_buffer();
          std::this_thread::sleep_for(std::chrono::seconds(1));
     }
