@@ -68,18 +68,21 @@ uint8_t Output_Handler::write_data(const char* data_to_write, uint16_t datalen){
             //std::cout.write(data_to_write,datalen);
             int wb;   
             wb = fwrite(data_to_write, sizeof(char), datalen,stdout);
-            ptrDebug->debug(4,"output_handler: writing to stdout bytecount: ",false);
-            ptrDebug->debug(4,datalen,false,false);
-            ptrDebug->debug(4," - written by fwrite: ",false,false);
-            ptrDebug->debug(4,wb,true,false);
+            //fflush(stdout); --> dont flush needed so data is not accumulated in stdout buffer. but flush after every write might be slow. -> better flush after packet is done. this is done in packetizer class!
+            if(ptrDebug->get_debug_level() >= 4){
+                ptrDebug->debug(4,"output_handler: writing to stdout bytecount: ",false);
+                ptrDebug->debug(4,datalen,false,false);
+                ptrDebug->debug(4," - written by fwrite: ",false,false);
+                ptrDebug->debug(4,wb,true,false);
 
-            char* dataString2 = new char[datalen * 3 + 1];
-            for (size_t i = 0; i < datalen; ++i) {
-                sprintf(dataString2 + i * 3, "%02X ", static_cast<unsigned char>(data_to_write[i]));
+                char* dataString2 = new char[datalen * 3 + 1];
+                for (size_t i = 0; i < datalen; ++i) {
+                    sprintf(dataString2 + i * 3, "%02X ", static_cast<unsigned char>(data_to_write[i]));
+                }
+                ptrDebug->debug(4,"output_Handler : write STDOUT - RAW DATA: ",false);
+                ptrDebug->debug(4,dataString2,true, false);
+                delete[] dataString2;
             }
-            ptrDebug->debug(4,"output_Handler : write STDOUT - RAW DATA: ",false);
-            ptrDebug->debug(4,dataString2,true, false);
-            delete[] dataString2;
             break;
         }
 

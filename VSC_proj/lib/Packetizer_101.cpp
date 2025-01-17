@@ -162,6 +162,7 @@ uint8_t Packetizer_101::process_buffer(){
     if(written_up_to_byte > 0){
         ptrBuffer->discard_data(written_up_to_byte);
     }
+    fflush(stdout);
     delete[] retrieved_buffer_data;
     
 
