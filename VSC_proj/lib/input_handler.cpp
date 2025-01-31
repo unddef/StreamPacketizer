@@ -21,8 +21,8 @@ Input_Handler::~Input_Handler(){
 uint8_t Input_Handler::com_configure_port(){
     dcbSerialParameters.DCBlength = sizeof(dcbSerialParameters);
     if (!GetCommState(h_Serial, &dcbSerialParameters)) {
-        ptrDebug->debug(1, "error while getting COM state");
-        return(1);    
+        ptrDebug->debug(1, "input_handler: error while getting COM state");
+        exit(1);    
     }
     dcbSerialParameters.BaudRate = CBR_9600;
     dcbSerialParameters.ByteSize = 8;
@@ -30,8 +30,8 @@ uint8_t Input_Handler::com_configure_port(){
     dcbSerialParameters.Parity = EVENPARITY;
     //set configuration active
     if (!SetCommState(h_Serial, &dcbSerialParameters)) {
-        ptrDebug->debug(1, "error while setting COM state"); 
-        return(1);
+        ptrDebug->debug(1, "input_handler: error while setting COM state"); 
+        exit(1);
     }
     //set read timeouts
     COMMTIMEOUTS timeout = {0};
@@ -41,8 +41,8 @@ uint8_t Input_Handler::com_configure_port(){
     timeout.WriteTotalTimeoutConstant = 60;
     timeout.WriteTotalTimeoutMultiplier = 8;
     if (!SetCommTimeouts(h_Serial, &timeout)) {
-        ptrDebug->debug(1, "error while setting COM timeouts"); 
-        return(1);
+        ptrDebug->debug(1, "input_handler: error while setting COM timeouts"); 
+        exit(1);
     };
     return(0);
 };
@@ -52,16 +52,16 @@ uint8_t Input_Handler::com_open_port(){
     if (h_Serial == INVALID_HANDLE_VALUE) { //check port open operation
         if (GetLastError() == ERROR_FILE_NOT_FOUND) {
             // serial port not found. Handle error here.
-            ptrDebug->debug(1,"could not open COM port. Port not found!");
-            return(1);
+            ptrDebug->debug(1,"input_handler: could not open COM port. Port not found!");
+            exit(1);
         } else {
-            ptrDebug->debug(1, "unknown error while opening COM port. Error code: ",0);
+            ptrDebug->debug(1, "input_handler: unknown error while opening COM port. Error code: ",0);
             ptrDebug->debug(1, GetLastError(),true,0);
-            return(1);
+            exit(1);
         };
         // any other error. Handle error here.
     }
-    ptrDebug->debug(3,"COM port opened sucessfully");
+    ptrDebug->debug(2,"input_handler: COM port opened sucessfully");
     return(0);
 };
 
@@ -70,10 +70,10 @@ uint8_t Input_Handler::com_read_bytes(){
     DWORD errors;
     COMSTAT status;
     if (ClearCommError(h_Serial, &errors, &status)) {
-        ptrDebug->debug(4,"Input_Handler : Bytes in COM buffer: ",false);
+        ptrDebug->debug(4,"input_Handler: Bytes in COM buffer: ",false);
         ptrDebug->debug(4,status.cbInQue,false,false);
     } else {
-        ptrDebug->debug(1,"Input_Handler : Error fetching COM Status. Error code: ",false);
+        ptrDebug->debug(1,"input_Handler: Error fetching COM Status. Error code: ",false);
         ptrDebug->debug(1,GetLastError(),true,false);
     }
     
@@ -103,7 +103,7 @@ uint8_t Input_Handler::com_read_bytes(){
     char* ptrCharBuffer = new char[bytesToRead];
     DWORD dwRead = 0;
     if (!ReadFile(h_Serial, ptrCharBuffer, bytesToRead, &dwRead, NULL)) {
-        ptrDebug->debug(1,"Input_Handler : error reading data from COM port. aborting...");
+        ptrDebug->debug(1,"input_Handler: error reading data from COM port. aborting...");
         delete ptrCharBuffer;
         return(1);
     }
@@ -133,7 +133,7 @@ uint8_t Input_Handler::ip_open_socket(){
         ptrDebug->debug(1,"ip_open_socket: error - wrong version");
         exit(1);
     }
-    //Fill out the information needed to initialize a socket�
+    //Fill out the information needed to initialize a socket
     SOCKADDR_IN dstAddr; //Socket address information
     dstAddr.sin_family = AF_INET; // address family Internet
     dstAddr.sin_port = htons (tcp_input_port); //Port to connect on
@@ -209,7 +209,7 @@ uint8_t Input_Handler::ip_read_bytes(){
         delete[] tmpBuf;
         return(1);
     } else {
-        ptrDebug->debug(3,"ip_read_bytes: bytes received: "  + std::to_string(bytesReceived));
+        ptrDebug->debug(4,"ip_read_bytes: bytes received: "  + std::to_string(bytesReceived));
         //ptrDebug->debug(4,bytesReceived,true,false);
         //std::cout << "Received data: " << tmpBuf << std::endl;
         ptrStreamBuffer->add_data(tmpBuf,bytesToRead);
@@ -228,8 +228,6 @@ uint8_t Input_Handler::open_input_stream(std::string path){
     if (std::regex_match(path, match, com_regex)) {                // path matches the COM regex
         if (match.size() == 3) { // match[0] is the whole match, match[1] is "COM", match[2] is the number
             input_path = "\\\\.\\COM" + match[2].str();
-            ptrDebug->debug(3,"open_input_stream: opening com port: ",false);
-            ptrDebug->debug(3,input_path,true,false);
             if(com_open_port() == 0) {
                 ptrDebug->debug(2,"open_input_stream: successfully opened COM port ",false);
                 ptrDebug->debug(2,input_path,true,false);
@@ -252,8 +250,6 @@ uint8_t Input_Handler::open_input_stream(std::string path){
             tcp_input_ip = match[1].str();
             tcp_input_port = stoi(match[2].str());
             input_type = enumInputStreamType::IP_PORT;
-            //ptrDebug->debug(2,"open_input_stream: opening IP input stream from "+tcp_input_ip+":",false);
-            //ptrDebug->debug(2,tcp_input_port,true,false);
             ip_open_socket();
             return(0);
         }
@@ -263,7 +259,6 @@ uint8_t Input_Handler::open_input_stream(std::string path){
 
     ptrDebug->debug(1,"open_input_stream: unkown input type specified. cant open! exiting");
     exit(1);
-    return(1);
 };
 
 uint8_t Input_Handler::read_bytes(){
@@ -295,5 +290,5 @@ uint8_t Input_Handler::close_input_stream(){
     return(1);
 };
  
-//helper functions
+
 

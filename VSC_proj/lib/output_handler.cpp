@@ -25,8 +25,7 @@ uint8_t Output_Handler::open_output_stream(std::string filepath){
             ptrDebug->debug(3,"output_handler: opening output file: " + filepath);
             FileHandler.open(filepath, std::ios::out | std::ios::binary);
             if (!FileHandler.is_open()) {
-                ptrDebug->debug(1,"Failed to open file: ", false);
-                ptrDebug->debug(1,filepath,true,false);;
+                ptrDebug->debug(1,"Failed to open file: " + filepath);
                 currentOutputType = enumOutputStreamType::UNKNOWN;
                 exit(1);
             }else{
@@ -43,7 +42,7 @@ uint8_t Output_Handler::open_output_stream(std::string filepath){
             _setmode(_fileno(stdout), O_BINARY);        //set output mode to binary to avoid problems with "random" 0x0d (new line) insertion
         break;
         default:
-            ptrDebug->debug(1,"no output stream selected. exiting");
+            ptrDebug->debug(1,"output_handler: no output stream selected. exiting");
             currentOutputType = enumOutputStreamType::UNKNOWN;
             currentOutputPath = "";
             exit(1);

@@ -53,7 +53,7 @@ void signalHandler(int signum){
 
 
 uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
-    debug.debug(1,"program start");
+    debug.debug(1,"program start with debug_level=" + debug.get_debug_level());
     //register signal handler for ctrl+c abortion
     std::signal(SIGINT, signalHandler);
     
@@ -68,8 +68,7 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
             }else {
                 debug.debug(1,"not enough arguments specified. exiting");
                 exit(1);
-            }
-            
+            }            
         // option -d for debug  
         } else if (arg == "-d" ) {
             if(i + 1 < cmd_arg_count){
@@ -94,7 +93,21 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
                 debug.debug(1,"not enough arguments specified. exiting");
                 exit(1);
             }
+        //option -b for baudrate
+        }else if ( arg == "-b" ) {
+            if(i + 1 < cmd_arg_count){
+                //setting inputstreampath to string from cmd line argument
+                uint32_t new_baudrate = std::stoi(CMD_arg_value[i+1]);
+                if (new_baudrate == 110 || new_baudrate == 300 || new_baudrate == 600 || new_baudrate == 1200 || new_baudrate == 2400 || new_baudrate == 4800 || new_baudrate == 9600 || new_baudrate == 14400 || new_baudrate == 19200 || new_baudrate == 38400 || new_baudrate == 56000 || new_baudrate == 57600 || new_baudrate == 115200 || new_baudrate == 128000 ||new_baudrate == 256000){
+
+                };
+            }else {
+                debug.debug(1,"not enough arguments specified. exiting");
+                exit(1);
+            }
         }
+        
+
     }
 
     //open pcap file
