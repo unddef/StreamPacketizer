@@ -53,7 +53,6 @@ void signalHandler(int signum){
 
 
 uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
-    debug.debug(1,"program start with debug_level=" + debug.get_debug_level());
     //register signal handler for ctrl+c abortion
     std::signal(SIGINT, signalHandler);
     
@@ -98,9 +97,27 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
             if(i + 1 < cmd_arg_count){
                 //setting inputstreampath to string from cmd line argument
                 uint32_t new_baudrate = std::stoi(CMD_arg_value[i+1]);
-                if (new_baudrate == 110 || new_baudrate == 300 || new_baudrate == 600 || new_baudrate == 1200 || new_baudrate == 2400 || new_baudrate == 4800 || new_baudrate == 9600 || new_baudrate == 14400 || new_baudrate == 19200 || new_baudrate == 38400 || new_baudrate == 56000 || new_baudrate == 57600 || new_baudrate == 115200 || new_baudrate == 128000 ||new_baudrate == 256000){
-
-                };
+                inputStream.com_configure_baudrate(new_baudrate);
+            }else {
+                debug.debug(1,"not enough arguments specified. exiting");
+                exit(1);
+            }
+        //option -s for stopbit
+        }else if ( arg == "-s" ) {
+            if(i + 1 < cmd_arg_count){
+                //setting inputstreampath to string from cmd line argument
+                uint32_t new_stopbit = std::stoi(CMD_arg_value[i+1]);
+                inputStream.com_configure_stopbit(new_stopbit);
+            }else {
+                debug.debug(1,"not enough arguments specified. exiting");
+                exit(1);
+            }
+        //option -p for parity
+        }else if ( arg == "-p" ) {
+            if(i + 1 < cmd_arg_count){
+                //setting inputstreampath to string from cmd line argument
+                uint32_t new_parity = std::stoi(CMD_arg_value[i+1]);
+                inputStream.com_configure_parity(new_parity);
             }else {
                 debug.debug(1,"not enough arguments specified. exiting");
                 exit(1);
@@ -109,7 +126,7 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
         
 
     }
-
+    debug.debug(1,"program start with debug_level=" + std::to_string(debug.get_debug_level()));
     //open pcap file
     outputStream.open_output_stream(outputStreamPath);
     pcapFile.write_file_header();

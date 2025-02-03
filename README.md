@@ -39,6 +39,14 @@ currently there are two output options: file or STDOUT
 To write the captured traffic to a file specify the output path: -o "c:\users\test\desktop\capture.pcap"
 If "-" is used as outputPath STDOUT is used for data output. This can be redirected by ">" and by pipe "|". 
 
+### -b <baudrate> / COM port baudrate
+allowed baudrates 110,300,600,1200,2400,4800,9600,14400,19200,38400,56000,57600,115200,256000
+
+### -s <1-2> / stopbits
+
+### -p <0-2> / parity
+0 = none, 1 = odd, 2 = even
+
 ## Usage examples
 ### open COM port and write to file
 ```

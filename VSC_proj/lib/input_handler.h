@@ -23,6 +23,9 @@ class Input_Handler {
         DCB dcbSerialParameters = {0};
         HANDLE h_Serial;
         SOCKET h_tcpSocket;
+        uint32_t com_baudrate = 9600;
+        uint8_t com_stopbit = 1;
+        uint8_t com_parity = 1;
         uint8_t com_configure_port();
         uint8_t com_open_port();
         uint8_t com_read_bytes();
@@ -35,6 +38,9 @@ class Input_Handler {
         uint8_t open_input_stream(std::string);
         uint8_t read_bytes();
         uint8_t close_input_stream();
+        uint8_t com_configure_baudrate(uint32_t);
+        uint8_t com_configure_stopbit(uint8_t);
+        uint8_t com_configure_parity(uint8_t);
 
         enum class enumInputStreamType {
             COM_PORT,

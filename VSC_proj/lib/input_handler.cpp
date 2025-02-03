@@ -17,17 +17,58 @@ Input_Handler::Input_Handler(Custom_Debugger* ext_debug_handler, Buffer_Handler*
 Input_Handler::~Input_Handler(){
     close_input_stream();
 };
+uint8_t Input_Handler::com_configure_baudrate(uint32_t new_baudrate){
+    //check baudrate
+    if (new_baudrate == 110 || new_baudrate == 300 || new_baudrate == 600 || new_baudrate == 1200 || new_baudrate == 2400 || new_baudrate == 4800 || new_baudrate == 9600 || new_baudrate == 14400 || new_baudrate == 19200 || new_baudrate == 38400 || new_baudrate == 56000 || new_baudrate == 57600 || new_baudrate == 115200 || new_baudrate == 128000 ||new_baudrate == 256000){
+        com_baudrate = new_baudrate;
+    }else {
+        ptrDebug->debug(1,"not supported baudrate. exiting");
+        exit(1);
+    };
+    return(0);
+}
+
+uint8_t Input_Handler::com_configure_stopbit(uint8_t new_stopbit){
+    //check stopbit
+    if ( new_stopbit == 1 ){
+        com_stopbit = ONESTOPBIT;
+    }else if( new_stopbit == 2){
+        com_stopbit = TWOSTOPBITS;
+    }else {
+        ptrDebug->debug(1,"not supported stopbit setting. allowed <1-2>. exiting");
+        exit(1);
+    };
+};
+
+uint8_t Input_Handler::com_configure_parity(uint8_t new_parity){
+    //check parity
+    if ( new_parity == 0 ){
+        com_parity = NOPARITY;
+    }else if( new_parity == 1){
+        com_parity = ODDPARITY;
+    }else if( new_parity == 2){
+        com_parity = EVENPARITY;
+    }else {
+        ptrDebug->debug(1,"not supported parity setting. allowed <0=none/1=odd/2=even>. exiting");
+        exit(1);
+    };
+}
+
 
 uint8_t Input_Handler::com_configure_port(){
+    //ptrDebug->debug(4, "input_handler: configure COM port"); 
     dcbSerialParameters.DCBlength = sizeof(dcbSerialParameters);
+    //get com state
     if (!GetCommState(h_Serial, &dcbSerialParameters)) {
         ptrDebug->debug(1, "input_handler: error while getting COM state");
         exit(1);    
     }
-    dcbSerialParameters.BaudRate = CBR_9600;
+    //default settings
+    dcbSerialParameters.BaudRate = com_baudrate;
     dcbSerialParameters.ByteSize = 8;
-    dcbSerialParameters.StopBits = ONESTOPBIT;
-    dcbSerialParameters.Parity = EVENPARITY;
+    dcbSerialParameters.StopBits = com_stopbit;
+    dcbSerialParameters.Parity = com_parity;
+
     //set configuration active
     if (!SetCommState(h_Serial, &dcbSerialParameters)) {
         ptrDebug->debug(1, "input_handler: error while setting COM state"); 
@@ -62,6 +103,7 @@ uint8_t Input_Handler::com_open_port(){
         // any other error. Handle error here.
     }
     ptrDebug->debug(2,"input_handler: COM port opened sucessfully");
+    com_configure_port();
     return(0);
 };
 
