@@ -1,32 +1,44 @@
 #include "Packetizer_101.h"
 
-Packetizer_101::Packetizer_101(Custom_Debugger* ext_debug_obj, Buffer_Handler* ext_buffer_obj,Pcap_Handler* ext_pcap_obj,uint8_t link_addr_length = 1,uint8_t asdu_addr_length = 2, uint8_t ioa_addr_length = 3, uint16_t ext_max_tel_len=255){
+Packetizer_101::Packetizer_101(Custom_Debugger* ext_debug_obj, Buffer_Handler* ext_buffer_obj,Pcap_Handler* ext_pcap_obj, uint16_t ext_max_tel_len=255){
     ptrDebug = ext_debug_obj;
     ptrBuffer = ext_buffer_obj;
     ptrPcapWriter = ext_pcap_obj;
     max_telegram_length = ext_max_tel_len;
-    if(link_addr_length >= 0 && link_addr_length <=2){
-        link_addr_len = link_addr_length;
-    }else{
-        ptrDebug->debug(1,"Packetizer: wrong link addr length. defaulting to 2");
-        link_addr_len = 2;
-    }
-    if(asdu_addr_length >= 1 && asdu_addr_length <=2){
-        asdu_addr_len = asdu_addr_length;
-    }else{
-        ptrDebug->debug(1,"Packetizer: wrong asdu addr length. defaulting to 2");
-        asdu_addr_len = 2;
-    }
-    if(ioa_addr_length >= 1 && ioa_addr_length <=3){
-        ioa_addr_len = ioa_addr_length;
-    }else{
-        ptrDebug->debug(1,"Packetizer: wrong IOA addr length. defaulting to 3");
-        link_addr_len = 3;
-    }
+    
 };
 
 Packetizer_101::~Packetizer_101(){
+    
+};
 
+uint8_t Packetizer_101::set_link_addr_len(uint8_t link_len){
+    if(link_len >= 0 && link_len <=2){
+        link_addr_len = link_len;
+        return(0);
+    }else{
+        ptrDebug->debug(1,"Packetizer: wrong link addr length. exiting ...");
+        exit(1);
+    }
+};
+
+uint8_t Packetizer_101::set_asdu_addr_len(uint8_t asdu_len){
+    if(asdu_len >= 1 && asdu_len <=2){
+        asdu_addr_len = asdu_len;
+        return(0);
+    }else{
+        ptrDebug->debug(1,"Packetizer: wrong asdu address length. exiting ...");
+        exit(1);
+    }
+};
+uint8_t Packetizer_101::set_ioa_addr_len(uint8_t ioa_len){
+    if(ioa_len >= 1 && ioa_len <=3){
+        ioa_addr_len = ioa_len;
+        return(0);
+    }else{
+        ptrDebug->debug(1,"Packetizer: wrong IOA address length. exiting ...");
+        exit(1);
+    }
 };
 
 uint8_t Packetizer_101::process_buffer(){

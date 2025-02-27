@@ -39,7 +39,7 @@ Output_Handler  outputStream(&debug);
 Pcap_Handler    pcapFile(&debug,&outputStream);
 Buffer_Handler  streamBuffer(MAIN_BUFFER_SIZE,&debug);
 Input_Handler   inputStream(&debug,&streamBuffer);
-Packetizer_101  iecPacketizer(&debug,&streamBuffer,&pcapFile,1,2,3, MAX_TELEGRAM_LENGTH);
+Packetizer_101  iecPacketizer(&debug,&streamBuffer,&pcapFile, MAX_TELEGRAM_LENGTH);
 
 
 //handle ctrl+c and other external signals
@@ -122,7 +122,37 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
                 debug.debug(1,"not enough arguments specified. exiting");
                 exit(1);
             }
+        //option -L  for Link address length -A -I
+        }else if ( arg == "-L" ) {
+            if(i + 1 < cmd_arg_count){
+                uint32_t new_link_len = std::stoi(CMD_arg_value[i+1]);
+                iecPacketizer.set_link_addr_len(new_link_len);
+            }else {
+                debug.debug(1,"not enough arguments specified. exiting");
+                exit(1);
+            }
+        //option -A for ASDU address length
+        }else if ( arg == "-A" ) {
+            if(i + 1 < cmd_arg_count){
+                uint32_t new_asdu_len = std::stoi(CMD_arg_value[i+1]);
+                iecPacketizer.set_asdu_addr_len(new_asdu_len);
+            }else {
+                debug.debug(1,"not enough arguments specified. exiting");
+                exit(1);
+            }
+        //option -I for IOA address length
+        }else if ( arg == "-I" ) {
+            if(i + 1 < cmd_arg_count){
+                uint32_t new_ioa_len = std::stoi(CMD_arg_value[i+1]);
+                iecPacketizer.set_ioa_addr_len(new_ioa_len);
+            }else {
+                debug.debug(1,"not enough arguments specified. exiting");
+                exit(1);
+            }
         }
+
+
+
         
 
     }
