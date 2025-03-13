@@ -47,6 +47,13 @@ allowed baudrates 110,300,600,1200,2400,4800,9600,14400,19200,38400,56000,57600,
 ### -p <0-2> / parity
 0 = none, 1 = odd, 2 = even
 
+### -L / Link address length
+allowed values: 0-2
+### -A / ASDU address length
+allowed values: 1-2
+### -I / information object address length
+allowed values: 1-3
+
 ## Usage examples
 ### open COM port and write to file
 ```
