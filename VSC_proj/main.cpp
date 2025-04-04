@@ -24,8 +24,8 @@
 - kurzquittierung einbauen?
 //********/
 
-const DWORD MAIN_BUFFER_SIZE = 100;
-const uint16_t MAX_TELEGRAM_LENGTH = 255;
+const DWORD MAIN_BUFFER_SIZE = 4000;
+const uint16_t MAX_TELEGRAM_LENGTH = 400;
 const int defaultDebugLevel = 2;
 
 std::string inputStreamPath = "COM1"; //default value.
@@ -169,7 +169,7 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
         inputStream.read_bytes();
         //streamBuffer.dump_buffer_to_debug();
         iecPacketizer.process_buffer();
-         std::this_thread::sleep_for(std::chrono::seconds(1));
+         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
     debug.debug(1,"closing handlers");
     inputStream.close_input_stream();
