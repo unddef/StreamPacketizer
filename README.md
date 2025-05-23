@@ -13,7 +13,6 @@ Garbage data from the input stream is not discarded but also written to the file
 It is not only possible to write output data to a file but also to use STDOUT as output destination. This enables live traffic captures by piping the output to wireshark's STDIN input interface.
 
 ## TODOs beeing worked on
- - [] set com port parameters by cmdline
  - [] think about COMTIMEOUTS in input_handler.cpp 
 
 ## current limitations
@@ -21,7 +20,6 @@ It is not only possible to write output data to a file but also to use STDOUT as
  - input-source "file" not implemented yet
  - "TCP connection failed" at program startup not detected
  - "TCP connection failed" while captureing not detected
- - link_addr_len, ASDU_addr_len, IOA_len not configurable (as parameters) 
  
 ## commandline options
 ### -d <0-4> / Debug level
