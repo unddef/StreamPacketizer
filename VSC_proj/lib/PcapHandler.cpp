@@ -111,7 +111,8 @@ bool Pcap_Handler::write_file_header() {
         //timestamping
             // Get the current time in microseconds since the last full second
             // Get the current time point
-        auto now = std::chrono::steady_clock::now();
+        auto now = std::chrono::system_clock::now();
+
         // Get the current time in seconds
         auto seconds = std::chrono::duration_cast<std::chrono::seconds>(now.time_since_epoch()).count();
         // Get the current time in microseconds
@@ -129,6 +130,8 @@ bool Pcap_Handler::write_file_header() {
         //packet_header.ts_usec = 0;                                      // Microseconds (set to 0)
         packet_header.ts_sec = seconds;
         packet_header.ts_usec = us_delta;
+        //ptrDebug->debug(1,"pcap paket time seconds: ",false);
+        //ptrDebug->debug(1,seconds,true,false);
         packet_header.incl_len = packet_size;                           // Captured packet length
         packet_header.orig_len = packet_size;                           // Original packet length
         

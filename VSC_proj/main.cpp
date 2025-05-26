@@ -169,7 +169,7 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
         inputStream.read_bytes();
         //streamBuffer.dump_buffer_to_debug();
         iecPacketizer.process_buffer();
-         std::this_thread::sleep_for(std::chrono::milliseconds(100));
+         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
     debug.debug(1,"closing handlers");
     inputStream.close_input_stream();
