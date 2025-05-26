@@ -12,6 +12,10 @@ Input_Handler::Input_Handler(Custom_Debugger* ext_debug_handler, Buffer_Handler*
     ptrDebug = ext_debug_handler;
     ptrStreamBuffer = used_buffer;
     input_type = enumInputStreamType::UNKNOWN;
+    com_configure_baudrate(9600);
+    com_configure_stopbit(1);
+    com_configure_parity(2);
+
 };
 
 Input_Handler::~Input_Handler(){
@@ -76,11 +80,11 @@ uint8_t Input_Handler::com_configure_port(){
     }
     //set read timeouts
     COMMTIMEOUTS timeout = {0};
-    timeout.ReadIntervalTimeout = 60;               //specifies the time that must pass between receiving characters before timing out (in milliseconds)
-    timeout.ReadTotalTimeoutConstant = 60;          //provides the amount of time to wait before returning
-    timeout.ReadTotalTimeoutMultiplier = 15;
-    timeout.WriteTotalTimeoutConstant = 60;
-    timeout.WriteTotalTimeoutMultiplier = 8;
+    timeout.ReadIntervalTimeout = 0;         //specifies the time that must pass between receiving characters before timing out (in milliseconds)
+    timeout.ReadTotalTimeoutConstant = 0;          //provides the amount of time to wait before returning
+    timeout.ReadTotalTimeoutMultiplier = 0;
+    timeout.WriteTotalTimeoutConstant = 8;
+    timeout.WriteTotalTimeoutMultiplier = 0;
     if (!SetCommTimeouts(h_Serial, &timeout)) {
         ptrDebug->debug(1, "input_handler: error while setting COM timeouts"); 
         exit(1);

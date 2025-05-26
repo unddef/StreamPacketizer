@@ -39,11 +39,14 @@ If "-" is used as outputPath STDOUT is used for data output. This can be redirec
 
 ### -b <baudrate> / COM port baudrate
 allowed baudrates 110,300,600,1200,2400,4800,9600,14400,19200,38400,56000,57600,115200,256000
+default: 9600
 
 ### -s <1-2> / stopbits
+default: 1 stop bit
 
 ### -p <0-2> / parity
 0 = none, 1 = odd, 2 = even
+default: 2 = even parity
 
 ### -L / Link address length
 allowed values: 0-2
