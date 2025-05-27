@@ -15,6 +15,7 @@ Input_Handler::Input_Handler(Custom_Debugger* ext_debug_handler, Buffer_Handler*
     com_configure_baudrate(9600);
     com_configure_stopbit(1);
     com_configure_parity(2);
+    bytes_received = 0;
 
 };
 
@@ -42,6 +43,7 @@ uint8_t Input_Handler::com_configure_stopbit(uint8_t new_stopbit){
         ptrDebug->debug(1,"not supported stopbit setting. allowed <1-2>. exiting");
         exit(1);
     };
+    return(0);
 };
 
 uint8_t Input_Handler::com_configure_parity(uint8_t new_parity){
@@ -56,6 +58,7 @@ uint8_t Input_Handler::com_configure_parity(uint8_t new_parity){
         ptrDebug->debug(1,"not supported parity setting. allowed <0=none/1=odd/2=even>. exiting");
         exit(1);
     };
+    return(0);
 }
 
 
@@ -108,6 +111,7 @@ uint8_t Input_Handler::com_open_port(){
     }
     ptrDebug->debug(2,"input_handler: COM port opened sucessfully");
     com_configure_port();
+    reset_bytes_received();
     return(0);
 };
 
@@ -145,7 +149,6 @@ uint8_t Input_Handler::com_read_bytes(){
     ptrDebug->debug(4," Bytes to read from COM buffer  /  ",false,false);
     
     //read bytes
-    //char sBuff[300] = {0};
     char* ptrCharBuffer = new char[bytesToRead];
     DWORD dwRead = 0;
     if (!ReadFile(h_Serial, ptrCharBuffer, bytesToRead, &dwRead, NULL)) {
@@ -156,7 +159,10 @@ uint8_t Input_Handler::com_read_bytes(){
     ptrDebug->debug(4, dwRead,false,false);
     ptrDebug->debug(4," bytes processed ", true, false);
     
-    if(dwRead > 0) ptrStreamBuffer->add_data(ptrCharBuffer,bytesToRead);
+    if(dwRead > 0) {
+        ptrStreamBuffer->add_data(ptrCharBuffer,bytesToRead);
+        add_bytes_received(bytesToRead);
+    }
 
     delete ptrCharBuffer;
     return(0);
@@ -202,6 +208,7 @@ uint8_t Input_Handler::ip_open_socket(){
     ptrDebug->debug(2,"ip_open_socket: TCP socket opend to "+tcp_input_ip+":",false);
     ptrDebug->debug(2,tcp_input_port,true,false);
     input_type = enumInputStreamType::IP_PORT;
+    reset_bytes_received();
     return(0); //Success
 
 };
@@ -276,6 +283,7 @@ uint8_t Input_Handler::ip_read_bytes(){
         //ptrDebug->debug(4,bytesReceived,true,false);
         //std::cout << "Received data: " << tmpBuf << std::endl;
         ptrStreamBuffer->add_data(tmpBuf,bytesToRead);
+        add_bytes_received(bytesReceived);
     }
     delete[] tmpBuf;
     return(0);
@@ -352,6 +360,20 @@ uint8_t Input_Handler::close_input_stream(){
     input_type = enumInputStreamType::UNKNOWN;
     return(1);
 };
+
+
+uint64_t Input_Handler::get_bytes_received(){
+    return(bytes_received);
+}
  
+uint8_t Input_Handler::add_bytes_received(uint32_t byte_count){
+    bytes_received = bytes_received + byte_count;
+    return(0);
+}
+
+uint8_t Input_Handler::reset_bytes_received(){
+    bytes_received = 0;
+    return(0);
+}
 
 

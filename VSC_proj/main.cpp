@@ -27,11 +27,11 @@
 const DWORD MAIN_BUFFER_SIZE = 4000;
 const uint16_t MAX_TELEGRAM_LENGTH = 400;
 const int defaultDebugLevel = 2;
+const int main_loop_cycle_time_ms = 10;     //sleep time in main loop
 
 std::string inputStreamPath = "COM1"; //default value.
 //std::string inputStreamPath = "127.0.0.1:8889";
-
-std::string outputStreamPath = "./test_output.pcap";
+std::string outputStreamPath = "./101dump_output.pcap";     //default value
 //std::string outputStreamPath = "-";
 
 Custom_Debugger debug(defaultDebugLevel);
@@ -163,13 +163,22 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
 
     //openinput source
     inputStream.open_input_stream(inputStreamPath);
-
+    uint8_t main_loop_counter = 0;
     while(loopingEnabled){
-        
+        auto start = std::chrono::high_resolution_clock::now();
         inputStream.read_bytes();
         //streamBuffer.dump_buffer_to_debug();
         iecPacketizer.process_buffer();
-         std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double, std::milli> duration = end - start;
+        debug.debug(2,"cycle run duration: ",false);
+        debug.debug(2,duration.count(),true,false);
+        std::this_thread::sleep_for(std::chrono::milliseconds(main_loop_cycle_time_ms));
+        if ( (main_loop_counter % 100 ) == 0 ){
+            debug.debug(2,"total received bytes: ",false);
+            debug.debug(2,inputStream.get_bytes_received(),true,false);
+        }
+        main_loop_counter++;
     }
     debug.debug(1,"closing handlers");
     inputStream.close_input_stream();

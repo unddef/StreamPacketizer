@@ -26,6 +26,7 @@ class Input_Handler {
         uint32_t com_baudrate;
         uint8_t com_stopbit;
         uint8_t com_parity;
+        uint64_t bytes_received;
         uint8_t com_configure_port();
         uint8_t com_open_port();
         uint8_t com_read_bytes();
@@ -41,6 +42,9 @@ class Input_Handler {
         uint8_t com_configure_baudrate(uint32_t);
         uint8_t com_configure_stopbit(uint8_t);
         uint8_t com_configure_parity(uint8_t);
+        uint64_t get_bytes_received();
+        uint8_t add_bytes_received(uint32_t);
+        uint8_t reset_bytes_received();
 
         enum class enumInputStreamType {
             COM_PORT,
