@@ -198,8 +198,8 @@ uint8_t Input_Handler::ip_open_socket(){
         exit(1); //Couldn't connect
     }
     
-    //connect should have worked. check again
-    ptrDebug->debug(2,"ip_open_socket: TCP connection established to "+tcp_input_ip+":",false);
+    //connect should have worked. success not guaranteed 
+    ptrDebug->debug(2,"ip_open_socket: TCP socket opend to "+tcp_input_ip+":",false);
     ptrDebug->debug(2,tcp_input_port,true,false);
     input_type = enumInputStreamType::IP_PORT;
     return(0); //Success
@@ -213,11 +213,26 @@ uint8_t Input_Handler::ip_read_bytes(){
     if (call_result == SOCKET_ERROR) {
         ptrDebug->debug(1,"ip_read_bytes: error reading size of TCP buffer. Error code: ",false);
         ptrDebug->debug(1,WSAGetLastError(),true,false);
-        return(1);
+        close_input_stream();
+        exit(1);
     };
 
     if(bytesAvailable <= 0){
-        ptrDebug->debug(4,"ip_read_bytes: no bytes in TCP buffer.");
+        ptrDebug->debug(4,"ip_read_bytes: no bytes in TCP buffer. checking connection");
+        char* test_buf = new char[5];
+        int test_result = recv(h_tcpSocket, test_buf, 3,MSG_PEEK);
+        //ptrDebug->debug(3,"testresult: ",false);
+        //ptrDebug->debug(3,test_result,true,false);
+        if (test_result == SOCKET_ERROR ){
+            ptrDebug->debug(1,"ip_read_bytes: error while checking connection. Error code: ",false);
+            ptrDebug->debug(1,WSAGetLastError(),true,false);
+            ptrDebug->debug(1,"disconnecting the socket and exiting ...");
+            close_input_stream();
+            exit(1);
+        } else if (test_result == 0){
+            ptrDebug->debug(1,"ip_read_bytes: TCP connection was closed. exiting ...");
+            exit(1);
+        }
         return(0);
     };
 
@@ -249,11 +264,13 @@ uint8_t Input_Handler::ip_read_bytes(){
     char* tmpBuf = new char[bytesToRead];
     int bytesReceived = recv(h_tcpSocket, tmpBuf, bytesToRead, 0);
     
-    if (bytesReceived < 0) {
+    if (bytesReceived <= 0) {
         ptrDebug->debug(1,"ip_read_bytes: error reading bytes from TCP socket. Error code: ",false);
         ptrDebug->debug(1,WSAGetLastError(),true,false);
+        ptrDebug->debug(1,"disconnecting the socket and exiting ...");
         delete[] tmpBuf;
-        return(1);
+        close_input_stream();
+        exit(1);
     } else {
         ptrDebug->debug(4,"ip_read_bytes: bytes received: "  + std::to_string(bytesReceived));
         //ptrDebug->debug(4,bytesReceived,true,false);
