@@ -68,7 +68,7 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
                 debug.debug(1,"not enough arguments specified. exiting");
                 exit(1);
             }            
-        // option -d for debug  
+        // option -d for debug level
         } else if (arg == "-d" ) {
             if(i + 1 < cmd_arg_count){
                 int new_debug_lebel = std::stoi(CMD_arg_value[i+1]);
