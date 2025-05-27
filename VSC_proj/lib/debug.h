@@ -3,6 +3,7 @@
 #include <ctime>
 #include <iomanip>
 #include <iostream>
+#include <chrono>
 
 ///////////////////
 //Debug section
@@ -35,9 +36,13 @@ class Custom_Debugger {
 template <typename any2> void Custom_Debugger::debug( uint8_t debug_level, any2 msg, bool new_line, uint8_t timestamp ){
     if(current_debuglevel >= debug_level){
         if(timestamp != 0){
-            std::time_t now = std::time(nullptr);
-            const std::tm time = *std::localtime(std::addressof(now));
-            std::cerr << "[" << std::setfill('0') << std::setw(2) << time.tm_hour << ":" << std::setfill('0') << std::setw(2) << time.tm_min << ":" << std::setfill('0') << std::setw(2) << time.tm_sec << "] : ";
+            //std::time_t now = std::time(nullptr);
+            //const std::tm time = *std::localtime(std::addressof(now));
+            auto now = std::chrono::system_clock::now();    //get "now" timestamp
+            std::time_t now_c = std::chrono::system_clock::to_time_t(now); //convert to time_t
+            std::tm* local_time = std::localtime(&now_c);  //convert to local time
+             auto milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count() % 1000;  //calculate milliseconds
+            std::cerr << "[" << std::setfill('0') << std::setw(2) << local_time->tm_hour << ":" << std::setfill('0') << std::setw(2) << local_time->tm_min << ":" << std::setfill('0') << std::setw(2) << local_time->tm_sec << ":" << std::setfill('0') << std::setw(3) << milliseconds << "] : ";
         }
         if(new_line){
         std::cerr << msg << std::endl;

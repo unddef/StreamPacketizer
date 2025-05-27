@@ -108,8 +108,30 @@ bool Pcap_Handler::write_file_header() {
         size_t packet_size = sizeof(eth_header) + sizeof(ip_header) + sizeof(tcp_header) + packet_length;
         
         //pcap packet header
-        packet_header.ts_sec = static_cast<uint32_t>(time(nullptr));    // Current time in seconds
-        packet_header.ts_usec = 0;                                      // Microseconds (set to 0)
+        //timestamping
+            // Get the current time in microseconds since the last full second
+            // Get the current time point
+        auto now = std::chrono::system_clock::now();
+
+        // Get the current time in seconds
+        auto seconds = std::chrono::duration_cast<std::chrono::seconds>(now.time_since_epoch()).count();
+        // Get the current time in microseconds
+        auto microseconds = std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch()).count();
+        // Return the microseconds since the last full second
+        long long us_delta = microseconds - (seconds * 1000000);
+        if (us_delta >= 0 && us_delta < 1000000 ){
+            //all ok;
+        }else{
+            ptrDebug->debug(1,"Pcap_Handler::write_packet timestamping error: us > 1000000");
+            us_delta = 999999;
+        }
+        //old timestamping. 1s accuracy
+        //packet_header.ts_sec = static_cast<uint32_t>(time(nullptr));    // Current time in seconds
+        //packet_header.ts_usec = 0;                                      // Microseconds (set to 0)
+        packet_header.ts_sec = seconds;
+        packet_header.ts_usec = us_delta;
+        //ptrDebug->debug(1,"pcap paket time seconds: ",false);
+        //ptrDebug->debug(1,seconds,true,false);
         packet_header.incl_len = packet_size;                           // Captured packet length
         packet_header.orig_len = packet_size;                           // Original packet length
         

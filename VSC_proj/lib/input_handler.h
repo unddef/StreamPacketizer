@@ -9,8 +9,8 @@
 #include "./debug.h"
 #include "buffer_handler.h"
 
-const int MAX_COMPORT_READ_BLOCK_LENGTH = 15;
-const int MAX_IPPORT_READ_BLOCK_LENGTH = 100;
+const int MAX_COMPORT_READ_BLOCK_LENGTH = 1000;
+const int MAX_IPPORT_READ_BLOCK_LENGTH = 1000;
 //using namespace std;
 
 class Input_Handler {
@@ -23,9 +23,9 @@ class Input_Handler {
         DCB dcbSerialParameters = {0};
         HANDLE h_Serial;
         SOCKET h_tcpSocket;
-        uint32_t com_baudrate = 9600;
-        uint8_t com_stopbit = 1;
-        uint8_t com_parity = 1;
+        uint32_t com_baudrate;
+        uint8_t com_stopbit;
+        uint8_t com_parity;
         uint8_t com_configure_port();
         uint8_t com_open_port();
         uint8_t com_read_bytes();
