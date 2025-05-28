@@ -9,7 +9,7 @@
                 "/EHsc",
                 "/nologo",
                 //"/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "/Fe${fileDirname}\\101dump.exe",
+                "/Fe${fileDirname}\\101dump_${config:program_version}.exe",
                 ".\\lib\\debug.cpp",
                 ".\\lib\\buffer_handler.cpp",
                 ".\\lib\\input_handler.cpp",

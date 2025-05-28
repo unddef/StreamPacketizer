@@ -1,4 +1,5 @@
 {
+    "program_version" : "v0.6.1",
     "files.associations": {
         "atomic": "cpp",
         "bit": "cpp",

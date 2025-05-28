@@ -160,13 +160,31 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
     //open pcap file
     outputStream.open_output_stream(outputStreamPath);
     pcapFile.write_file_header();
-
     //openinput source
     inputStream.open_input_stream(inputStreamPath);
+    
+    
     uint8_t main_loop_counter = 0;
+    bool subthread_running = false;
+    
     while(loopingEnabled){
         auto start = std::chrono::high_resolution_clock::now();
-        inputStream.read_bytes();
+        
+        if(!subthread_running) {
+            //std::thread data_aquire(inputStream.read_bytes());
+            //subthread_running = true;
+        }else{
+            /*if (data_aquire.joinable()){
+                data_aquire
+            }
+        }
+
+        if(data_aquire.joinable()){
+            debug.debug(1,"joining thread");
+            data_aquire.join();
+        }*/
+        }
+
         //streamBuffer.dump_buffer_to_debug();
         iecPacketizer.process_buffer();
         auto end = std::chrono::high_resolution_clock::now();

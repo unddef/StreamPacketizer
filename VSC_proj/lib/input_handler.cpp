@@ -16,6 +16,7 @@ Input_Handler::Input_Handler(Custom_Debugger* ext_debug_handler, Buffer_Handler*
     com_configure_stopbit(1);
     com_configure_parity(2);
     bytes_received = 0;
+    read_bytes_running = false;
 
 };
 
@@ -333,6 +334,7 @@ uint8_t Input_Handler::open_input_stream(std::string path){
 };
 
 uint8_t Input_Handler::read_bytes(){
+    read_bytes_running = true;
     switch(input_type){
         case enumInputStreamType::COM_PORT:
         com_read_bytes();
@@ -348,6 +350,7 @@ uint8_t Input_Handler::read_bytes(){
         ptrDebug->debug(1,"no input stream open. exiting program.");
         exit(1);
     }
+    read_bytes_running = false;
     return(1);
 }
 
