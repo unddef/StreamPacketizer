@@ -34,7 +34,7 @@ class Input_Handler {
         uint8_t ip_read_bytes();
             
     public:
-        bool read_bytes_running;
+        //bool read_bytes_running;
         Input_Handler(Custom_Debugger*, Buffer_Handler*);
         ~Input_Handler();
         uint8_t open_input_stream(std::string);

@@ -62,6 +62,7 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "algorithm": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "mutex": "cpp"
     }
 }

@@ -164,39 +164,23 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
     inputStream.open_input_stream(inputStreamPath);
     
     
-    uint8_t main_loop_counter = 0;
-    bool subthread_running = false;
     
+    bool subthread_running = false;
+    std::chrono::high_resolution_clock::time_point last_run;
     while(loopingEnabled){
         auto start = std::chrono::high_resolution_clock::now();
-        
-        if(!subthread_running) {
-            //std::thread data_aquire(inputStream.read_bytes());
-            //subthread_running = true;
-        }else{
-            /*if (data_aquire.joinable()){
-                data_aquire
-            }
-        }
-
-        if(data_aquire.joinable()){
-            debug.debug(1,"joining thread");
-            data_aquire.join();
-        }*/
-        }
-
-        //streamBuffer.dump_buffer_to_debug();
+        inputStream.read_bytes();
         iecPacketizer.process_buffer();
-        auto end = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<double, std::milli> duration = end - start;
-        debug.debug(2,"cycle run duration: ",false);
-        debug.debug(2,duration.count(),true,false);
+        std::chrono::duration<double, std::milli> duration = std::chrono::high_resolution_clock::now() - start;
+        debug.debug(4,"cycle run duration: ",false);
+        debug.debug(4,duration.count(),true,false);
         std::this_thread::sleep_for(std::chrono::milliseconds(main_loop_cycle_time_ms));
-        if ( (main_loop_counter % 100 ) == 0 ){
+        std::chrono::duration<double, std::milli> since_last = std::chrono::high_resolution_clock::now() - last_run;
+        if ( since_last.count() >= 1000 ){
             debug.debug(2,"total received bytes: ",false);
             debug.debug(2,inputStream.get_bytes_received(),true,false);
+            last_run = std::chrono::high_resolution_clock::now();
         }
-        main_loop_counter++;
     }
     debug.debug(1,"closing handlers");
     inputStream.close_input_stream();
