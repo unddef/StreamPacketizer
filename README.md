@@ -45,8 +45,8 @@ default: 9600
 default: 1 stop bit
 
 ### -p <0-2> / parity
-0 = none, 1 = odd, 2 = even
-default: 2 = even parity
+0 = none, 1 = odd, 2 = even(default)
+
 
 ### -L / Link address length
 allowed values: 0-2

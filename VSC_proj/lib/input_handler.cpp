@@ -356,9 +356,15 @@ uint8_t Input_Handler::read_bytes(){
 
 uint8_t Input_Handler::close_input_stream(){
     //close file handler
-    if(h_Serial) CloseHandle(h_Serial);
+    if(h_Serial) {
+        CloseHandle(h_Serial);
+        h_Serial = NULL;
+    }
     //close  TCP session
-    if (h_tcpSocket) closesocket(h_tcpSocket);
+    if (h_tcpSocket) {
+        closesocket(h_tcpSocket);
+        h_tcpSocket = NULL;
+    }
     WSACleanup(); //Clean up Winsock
     input_type = enumInputStreamType::UNKNOWN;
     return(1);

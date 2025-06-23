@@ -182,7 +182,7 @@ uint8_t main(int cmd_arg_count, char* CMD_arg_value[]){
             last_run = std::chrono::high_resolution_clock::now();
         }
     }
-    debug.debug(1,"closing handlers");
+    debug.debug(1,"left while loop. closing handlers");
     inputStream.close_input_stream();
     outputStream.close_output_stream();
     debug.debug(1,"program end");
